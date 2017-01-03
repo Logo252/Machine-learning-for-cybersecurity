@@ -3,9 +3,5 @@ language: python
 python:
   - 3.5
 
-# command to install dependencies
-install:
-  - pip install .
-
 # command to run tests
 script: pytest
