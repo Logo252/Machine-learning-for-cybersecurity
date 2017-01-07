@@ -1,8 +1,10 @@
 language: python
-sudo: false
-
 python:
-  - 3.5
-
-# command to install dependencies
-install: "pip install -r requirements.txt"
+  - "3.5"
+install:
+  - sudo apt-get update
+  - wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+  - yes "" | bash Anaconda3-4.2.0-Linux-x86_64.sh
+  - source $HOME/anaconda/bin/activate ~/anaconda
+  - pip install cython
+  - pip install scikit-learn==0.18.rc2
