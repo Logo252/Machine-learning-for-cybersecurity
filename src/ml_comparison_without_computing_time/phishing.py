@@ -6,6 +6,8 @@ from src.parameters import phishing_file
 
 # ML methods
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -28,8 +30,11 @@ seed = 7
 
 # ML methods - Decision Tree, Naive Bayes, Support Vector Machines, Neural Networks, Random Forest, Logistic Regression
 methods = [('Decision tree', DecisionTreeClassifier()),
+           ('Naive Bayes', GaussianNB()),
            # SVM - Support vector machines
            ('SVM', SVC()),
+           # DNN - Deep neural network with 5 hidden layers, each of the layers has 5 neurons
+           ('DNN', MLPClassifier(hidden_layer_sizes=(5, 5, 5, 5, 5))),
            ('Random forest', RandomForestClassifier()),
            ('Logistic regression', LogisticRegression()),
            ]
@@ -68,6 +73,6 @@ plt.title('Comparison of machine learning algorithms')
 # name of each box
 ax.set_xticklabels(methods_names)
 # change font size of the text
-plt.rcParams.update({'font.size': 25})
+plt.rcParams.update({'font.size': 23})
 # show box plot
 plt.show()
