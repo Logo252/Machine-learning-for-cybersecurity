@@ -3,24 +3,25 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
-from src.parameters import spam_file
+from src.parameters import constructor_file
 
 # ML methods
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
+from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 
-#                                   SPAM PROBLEM
+#                                   CONSTRUCTOR PROBLEM
 # ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(spam_file)
+dataFrame = pd.read_csv(constructor_file)
 
 # features (attributes)
-x = np.array(dataFrame.drop(['class'], 1))
+x = np.array(dataFrame.drop(['Result'], 1))
 
 # labels
-y = np.array(dataFrame['class'])
+y = np.array(dataFrame['Result'])
 
 # configuration for cross validation test harness
 number_of_folds = 10
@@ -28,7 +29,7 @@ number_of_instances = len(x)
 # seed ensures we have the same sequence of random numbers
 seed = 7
 
-# ML methods - Decision Tree, Naive Bayes, Support Vector Machines, Neural Networks, Random Forest
+# ML methods - Decision Tree, Naive Bayes, Support Vector Machines, Neural Networks, Random Forest, Logistic Regression
 methods = [('Decision tree', DecisionTreeClassifier()),
            ('Naive Bayes', GaussianNB()),
            # SVM - Support vector machines
@@ -36,11 +37,11 @@ methods = [('Decision tree', DecisionTreeClassifier()),
            # DNN - Deep neural network with 5 hidden layers, each of the layers has 5 neurons
            ('DNN', MLPClassifier(hidden_layer_sizes=(5, 5, 5, 5, 5))),
            ('Random forest', RandomForestClassifier()),
+           ('Logistic regression', LogisticRegression()),
            ]
 
 # evaluate each method in turn
 results = []
-# ML methods names
 methods_names = []
 scoring = 'accuracy'
 

@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
-from src.parameters import phishing_file
+from src.parameters import adware_file
 
 # ML methods
 from sklearn.tree import DecisionTreeClassifier
@@ -13,9 +13,9 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
-#                                   PHISHING PROBLEM
+#                                   ADWARE PROBLEM
 # ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(phishing_file)
+dataFrame = pd.read_csv(adware_file)
 
 # features (attributes)
 x = np.array(dataFrame.drop(['Result'], 1))
