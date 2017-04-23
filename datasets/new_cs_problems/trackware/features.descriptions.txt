@@ -1,0 +1,9 @@
+@relation trackware
+
+@feature having_dot_symbol { 0, 1 }
+@feature register { 0, 1 }
+@feature file_type { 0, 1 }
+@feature affected_os { 0, 1 }
+@feature HDD { 0, 1 }
+@feature startup_key  { 0, 1 }
+@feature created_folder  { 0, 1 }

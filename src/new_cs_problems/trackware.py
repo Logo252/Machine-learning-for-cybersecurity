@@ -1,46 +1,53 @@
 # -*- coding: utf-8 -*-
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
 from src.parameters import trackware_file
 
-# ML methods
+# Importing ML classifiers
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.neural_network import MLPClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import AdaBoostClassifier
 
 #                                   TRACKWARE PROBLEM
 # ------------------------------------------------------------------------------------
 dataFrame = pd.read_csv(trackware_file)
 
-# features (attributes)
+# Features
 x = np.array(dataFrame.drop(['Result'], 1))
 
-# labels
+# Labels
 y = np.array(dataFrame['Result'])
 
-# configuration for cross validation test harness
+# Configuration for cross validation test harness
 number_of_folds = 10
 number_of_instances = len(x)
-# seed ensures we have the same sequence of random numbers
+# Seed ensures we have the same sequence of random numbers
 seed = 7
 
-# ML methods - Decision Tree, Naive Bayes, Support Vector Machines, Neural Networks, Random Forest, Logistic Regression
-methods = [('Decision tree', DecisionTreeClassifier()),
+'''
+            ML methods
+- K-Nearest neighbors
+- Decision tree
+- Naive Bayes
+- Logistic regression
+- SVM (Support Vector Machines)
+- AdaBoost
+'''
+methods = [('K-Nearest neighbors', KNeighborsClassifier()),
+           ('Decision tree', DecisionTreeClassifier()),
            ('Naive Bayes', GaussianNB()),
-           # SVM - Support vector machines
-           ('SVM', SVC()),
-           # DNN - Deep neural network with 5 hidden layers, each of the layers has 5 neurons
-           ('DNN', MLPClassifier(hidden_layer_sizes=(5, 5, 5, 5, 5))),
-           ('Random forest', RandomForestClassifier()),
            ('Logistic regression', LogisticRegression()),
+           ('SVM', SVC()),
+           ('AdaBoost', AdaBoostClassifier()),
            ]
 
-# evaluate each method in turn
+# Evaluate each method in turn
 results = []
 methods_names = []
 scoring = 'accuracy'

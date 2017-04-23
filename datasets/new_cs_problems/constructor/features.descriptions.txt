@@ -1,0 +1,10 @@
+@relation constructor
+
+@feature having_dot_symbol { 0, 1 }
+@feature having_Constructor_word { 0, 1 }
+@feature having_Vbs_or_VBS_word { 0, 1 }
+@feature having_Worm_or_Worms_word { 0, 1 }
+@feature having_Vbswg_word { 0, 1 }
+@feature file_type  { 0, 1 }
+@feature file_extension  { 0, 1 }
+@feature affected_os  { 0, 1 }
