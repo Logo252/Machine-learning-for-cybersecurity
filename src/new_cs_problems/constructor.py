@@ -55,9 +55,11 @@ scoring = 'accuracy'
 
 for name, method in ml_methods:
     # noinspection PyDeprecation
-    k_fold = cross_validation.KFold(n=number_of_instances, n_folds=number_of_folds, random_state=seed)
+    k_fold = cross_validation.KFold(n=number_of_instances,
+                                    n_folds=number_of_folds, random_state=seed)
     # noinspection PyDeprecation
-    cv_results = cross_validation.cross_val_score(method, x, y, cv=k_fold, scoring=scoring)
+    cv_results = cross_validation.cross_val_score(method, x, y, cv=k_fold,
+                                                  scoring=scoring)
 
     results.append(cv_results)
     methods_names.append(name)
@@ -65,7 +67,8 @@ for name, method in ml_methods:
     print("\t\t%s" % name)
 
     # Mean accuracy and standard deviation accuracy
-    accuracy_message = "Mean accuracy: %.3f (+/- %.3f)\n" % (cv_results.mean() * 100, cv_results.std() * 100)
+    accuracy_message = "Mean accuracy: %.3f (+/- %.3f)\n" % (
+    cv_results.mean() * 100, cv_results.std() * 100)
     print(accuracy_message)
 
 # box plot for comparison of algorithms
