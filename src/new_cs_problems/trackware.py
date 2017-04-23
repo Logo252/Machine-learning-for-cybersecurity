@@ -14,80 +14,116 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import AdaBoostClassifier
 
-#                                   TRACKWARE PROBLEM
-# ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(trackware_file, sep=', ')
 
-# Features
-x = np.array(dataFrame.drop(['class'], 1))
+def run_script():
+    """
+    Runs script as the standalone script
+    :return: 
+    """
+    data_frame = pd.read_csv(trackware_file, sep=', ')
 
-# Labels
-y = np.array(dataFrame['class'])
+    # Features
+    x = np.array(data_frame.drop(['class'], 1))
 
-# Configuration for cross validation test harness
-number_of_folds = 10
-number_of_instances = len(x)
-# Seed ensures we have the same sequence of random numbers
-seed = 7
+    # Labels
+    y = np.array(data_frame['class'])
 
-'''
-            ML methods
-- K-Nearest neighbors
-- Decision tree
-- Naive Bayes
-- Logistic regression
-- SVM (Support Vector Machines)
-- AdaBoost
-'''
-ml_methods = [('K-Nearest neighbors', KNeighborsClassifier()),
-              ('Decision tree', DecisionTreeClassifier()),
-              ('Naive Bayes', GaussianNB()),
-              ('Logistic regression', LogisticRegression()),
-              ('SVM', SVC()),
-              ('AdaBoost', AdaBoostClassifier()),
-              ]
+    # Configuration for cross validation test harness
+    number_of_folds = 10
+    number_of_instances = len(x)
 
-# Evaluate each method in turn
-results = []
-methods_names = []
-scoring = 'accuracy'
+    # Seed ensures we have the same sequence of random numbers
+    seed = 7
 
-for name, method in ml_methods:
-    # noinspection PyDeprecation
-    k_fold = cross_validation.KFold(n=number_of_instances,
-                                    n_folds=number_of_folds,
-                                    random_state=seed)
-    # noinspection PyDeprecation
-    cv_results = cross_validation.cross_val_score(method,
-                                                  x,
-                                                  y,
-                                                  cv=k_fold,
-                                                  scoring=scoring)
+    ml_methods = [('K-Nearest neighbors', KNeighborsClassifier()),
+                  ('Decision tree', DecisionTreeClassifier()),
+                  ('Naive Bayes', GaussianNB()),
+                  ('Logistic regression', LogisticRegression()),
+                  ('SVM', SVC()),
+                  ('AdaBoost', AdaBoostClassifier()),
+                  ]
 
-    results.append(cv_results)
-    methods_names.append(name)
+    evaluate_methods_for_trackware(ml_methods=ml_methods,
+                                   number_of_instances=number_of_instances,
+                                   number_of_folds=number_of_folds,
+                                   seed=seed,
+                                   x=x,
+                                   y=y
+                                   )
 
-    print("\t\t%s" % name)
 
-    # Mean accuracy and standard deviation accuracy
-    accuracy_message = "Mean accuracy (standard deviation accuracy): %.3f (" \
-                       "+/- %.3f)\n" % (
-                           cv_results.mean() * 100, cv_results.std() * 100)
-    print(accuracy_message)
+def evaluate_methods_for_trackware(ml_methods, number_of_instances,
+                                   number_of_folds, seed, x, y):
+    """
+    Evaluates machine learning methods for cs problem - trackware
+    :param ml_methods: machine learning methods
+    :param number_of_instances: number of instances
+    :param number_of_folds: number of folds
+    :param seed: seed
+    :param x: features
+    :param y: labels
+    :return: 
+    """
+    results = []
+    methods_names = []
+    scoring = 'accuracy'
 
-# box plot for comparison of algorithms
-fig = plt.figure()
-# add a subplot to the new figure, 111 means "1x1 grid, first subplot"
-ax = fig.add_subplot(111)
-plt.boxplot(results)
-# x axis title
-plt.xlabel('Machine learning algorithms')
-# y axis title
-plt.ylabel('Accuracy')
-plt.title('Machine learning algorithms applied for trackware')
-# name of each box
-ax.set_xticklabels(methods_names)
-# change font size of the text
-plt.rcParams.update({'font.size': 23})
-# show box plot
-plt.show()
+    for name, method in ml_methods:
+        # noinspection PyDeprecation
+        k_fold = cross_validation.KFold(n=number_of_instances,
+                                        n_folds=number_of_folds,
+                                        random_state=seed)
+        # noinspection PyDeprecation
+        cv_results = cross_validation.cross_val_score(method,
+                                                      x,
+                                                      y,
+                                                      cv=k_fold,
+                                                      scoring=scoring)
+
+        results.append(cv_results)
+        methods_names.append(name)
+
+        print("\t\t%s" % name)
+
+        # Mean accuracy and standard deviation accuracy
+        accuracy_message = "Mean accuracy (standard deviation accuracy): " \
+                           "%.3f (+/- %.3f)\n" % (
+                               cv_results.mean() * 100, cv_results.std() * 100)
+        print(accuracy_message)
+
+    show_plot_of_algorithms_results(methods_names=methods_names,
+                                    results=results)
+
+
+def show_plot_of_algorithms_results(methods_names, results):
+    """
+    Shows plot of machine learning algorithms results
+    :param methods_names: Machine learning methods names
+    :param results: Results got from applying methods for trackware
+    :return: 
+    """
+    fig = plt.figure()
+
+    # Add a subplot to the new figure, 111 means "1x1 grid, first subplot"
+    ax = fig.add_subplot(111)
+    plt.boxplot(results)
+
+    # x axis title
+    plt.xlabel('Machine learning algorithms')
+
+    # y axis title
+    plt.ylabel('Accuracy')
+
+    plt.title('Machine learning algorithms applied for trackware')
+    # Name of each box
+    ax.set_xticklabels(methods_names)
+
+    # Change font size of the text
+    plt.rcParams.update({'font.size': 23})
+
+    # Show box plot
+    plt.show()
+
+
+if __name__ == "__main__":
+    run_script()
