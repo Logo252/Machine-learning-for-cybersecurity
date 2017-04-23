@@ -8,3 +8,4 @@
 @feature file_type  { 0, 1 }
 @feature file_extension  { 0, 1 }
 @feature affected_os  { 0, 1 }
+@feature class { 0, 1}

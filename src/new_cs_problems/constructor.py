@@ -16,13 +16,13 @@ from sklearn.ensemble import AdaBoostClassifier
 
 #                                   CONSTRUCTOR PROBLEM
 # ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(constructor_file)
+dataFrame = pd.read_csv(constructor_file, sep=', ')
 
 # Features
-x = np.array(dataFrame.drop(['Result'], 1))
+x = np.array(dataFrame.drop(['class'], 1))
 
 # Labels
-y = np.array(dataFrame['Result'])
+y = np.array(dataFrame['class'])
 
 # Configuration for cross validation test harness
 number_of_folds = 10
@@ -40,20 +40,20 @@ seed = 7
 - SVM (Support Vector Machines)
 - AdaBoost
 '''
-methods = [('K-Nearest neighbors', KNeighborsClassifier()),
-           ('Decision tree', DecisionTreeClassifier()),
-           ('Naive Bayes', GaussianNB()),
-           ('Logistic regression', LogisticRegression()),
-           ('SVM', SVC()),
-           ('AdaBoost', AdaBoostClassifier()),
-           ]
+ml_methods = [('K-Nearest neighbors', KNeighborsClassifier()),
+              ('Decision tree', DecisionTreeClassifier()),
+              ('Naive Bayes', GaussianNB()),
+              ('Logistic regression', LogisticRegression()),
+              ('SVM', SVC()),
+              ('AdaBoost', AdaBoostClassifier()),
+              ]
 
 # Evaluate each method in turn
 results = []
 methods_names = []
 scoring = 'accuracy'
 
-for name, method in methods:
+for name, method in ml_methods:
     # noinspection PyDeprecation
     k_fold = cross_validation.KFold(n=number_of_instances, n_folds=number_of_folds, random_state=seed)
     # noinspection PyDeprecation

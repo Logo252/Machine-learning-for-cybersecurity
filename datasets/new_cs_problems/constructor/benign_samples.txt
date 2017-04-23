@@ -1,54 +1,14 @@
-               CONSTRUCTOR DATA SAMPLES FROM - http://openmalware.org/
+                    BENIGN SAMPLES
 
 ----------------------------------------------------------------------------------------
 having_dot_symbol, having_Constructor_word, having_Vbs_or_VBS_word, having_Worm_or_Worms_word, having_Vbswg_word, file_type, file_extension, affected_os
 ----------------------------------------------------------------------------------------
-                                        1 - Constructor.Win32.ZedMac.10
+                                        1 -
 ----------------------------------------------------------------------------------------
-CopyrightCopyright © Zed/[rRlf], 2003.
-Product Zed's Word Macro Virus Constructor (ZWMVC)
-Original name MacroGen.exe
-Internal name MacroGen
-File version 1.00
-Description Word Macro virus constructor
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 1
 ----------------------------------------------------------------------------------------
-                                        2 - Constructor.DOS.BWG.403
+                                        2 -
 ----------------------------------------------------------------------------------------
-MD5 80d2a0c3a582f927604215b94e8d9d63
-SHA1 c614baa7b80f3f9c7b323b24f0e74d5fd0da9d6e
-SHA256 66fbc0298d0dc0e4295da5db5766d367f4005987600c552cc4f00f5ba59bf0ce
-ssdeep1536:3Y+moagSPtvbstk07AeNsLdM8R/U5moYJ06A2aRf3n/+NsWffJEK+ATJRDql1:3Y+nSVQW07ARvtU5xO06Eu19fO1
-File size 115.7 KB ( 118492 bytes )
-File type DOS EXE
-Magic literalMS-DOS executable, MZ for MS-DOS
-TrID	Clipper DOS Executable (33.1%)
-Generic Win/DOS Executable (32.8%)
-DOS Executable Generic (32.8%)
-Corel Photo Paint (0.6%)
-VXD Driver (0.5%)
-
-Features values:
-0, 0, 0, 0, 0, 1, 1, 1
-----------------------------------------------------------------------------------------
-                                        3 - Constructor.MSWord.Ctvck.c
-----------------------------------------------------------------------------------------
-last_authorNibbio
-creation_datetime1999-04-03 21:49:00
-authorXaRaBaS [DkpRJ]
-titleDiesel Power Virus Construction Kit
-page_count1
-last_saved1999-04-20 19:29:00
-edit_time480
-word_count25
-revision_number118
-application_nameMicrosoft Word 8.0
-character_count146
-templateDpvck
-code_page-535
-subjectDiesel Power Virus Construction Kit
-
-Features values:
-0, 1, 0, 0, 0, 1, 1, 1

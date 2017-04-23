@@ -7,3 +7,4 @@
 @feature HDD { 0, 1 }
 @feature startup_key  { 0, 1 }
 @feature created_folder  { 0, 1 }
+@feature class { 0, 1}

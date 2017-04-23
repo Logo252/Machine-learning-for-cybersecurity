@@ -12,7 +12,7 @@ phishing_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'cs_probl
 trackware_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'training.trackware.data.txt')
 constructor_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'training.constructor.data.txt')
 
-print(spam_file)
-print(phishing_file)
-print(trackware_file)
-print(constructor_file)
+# print(spam_file)
+# print(phishing_file)
+# print(trackware_file)
+# print(constructor_file)
