@@ -8,3 +8,28 @@
 @feature startup_key  { 0, 1 }
 @feature created_folder  { 0, 1 }
 @feature class { 0, 1}
+
+------------------------------------------------------------------------------
+•	having_dot_symbol
+Jei failo pavadinime yra 1 simbolis taškas, tuomet failas laikomas – sekančia programa, kitu atveju – palankiu failu.
+
+•	register
+Jei paleidus failą yra modifikuojamas registras, jo raktai bei reikšmės, tuomet failas laikomas – sekančia programa, kitu atveju – palankiu failu.
+
+•	file_type
+Jei failo tipas yra vykdomasis, tuomet failas yra laikomas – sekančia programa, kitu atveju – palankiu failu.
+
+•	affected_os
+Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+
+•	HDD
+Jei failas sukelia kietojo disko perpildymą, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+
+•	startup_key
+Jei failas sukuria naują paleisties raktą su vardu „Trackware“ ir reikšme (*.*), tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+
+•	created_folder
+Jei failas sukuria direktorijoje „C:\Program Files\“ ar  „C:\ProgramData\“ aplankalą su vardu „Trackware“, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+
+•	class
+If class value is 0 - file is benign, otherwise if the value is 1 - file is trackware

@@ -9,3 +9,31 @@
 @feature file_extension  { 0, 1 }
 @feature affected_os  { 0, 1 }
 @feature class { 0, 1}
+
+------------------------------------------------------------------------------
+•	having_dot_symbol
+Jei failo pavadinime yra 1 simbolis taškas, tuomet failas laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	having_Constructor_word
+Jei failo pavadinime yra žodis „Constructor“, tuomet failas laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	having_Vbs_or_VBS_word
+Jei failo pavadinime yra žodis „Vbs“ arba „VBS“ (angl. visual basic scrpt – skriptų rašymo kalba), tuomet failas laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	having_Worm_or_Worms_word
+Jei failo pavadinime yra žodis „Worm“ arba „Worms“, tuomet failas laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	having_Vbswg_word
+Jei failo pavadinime yra žodis „Vbswg“, tuomet failas laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	file_type
+Jei failo tipas yra vykdomasis, tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	file_extension
+Jei failo prievardis yra (.exe) arba (.doc), tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	affected_os
+Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra laikomas – konstruktoriumi, kitu atveju palankiu failu.
+
+•	class
+If class value is 0 - file is benign, otherwise if the value is 1 - file is constructor
