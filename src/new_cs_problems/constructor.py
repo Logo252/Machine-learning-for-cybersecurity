@@ -11,26 +11,26 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC  # Support Vector Machines
+from sklearn.svm import SVC  # SVM - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
 
 def run_script():
     """
-    Runs script as the standalone script
+    Runs the script as the standalone program
     :return: 
     """
     data_frame = pd.read_csv(constructor_file, sep=', ')
 
     # Features
-    x = np.array(data_frame.drop(['class'], 1))
+    features = np.array(data_frame.drop(['class'], 1))
 
     # Labels
-    y = np.array(data_frame['class'])
+    labels = np.array(data_frame['class'])
 
     # Configuration for cross validation test harness
     number_of_folds = 10
-    number_of_instances = len(x)
+    number_of_instances = len(features)
 
     # Seed ensures we have the same sequence of random numbers
     seed = 7
@@ -47,21 +47,21 @@ def run_script():
                                      number_of_instances=number_of_instances,
                                      number_of_folds=number_of_folds,
                                      seed=seed,
-                                     x=x,
-                                     y=y
+                                     features=features,
+                                     labels=labels
                                      )
 
 
 def evaluate_methods_for_constructor(ml_methods, number_of_instances,
-                                     number_of_folds, seed, x, y):
+                                     number_of_folds, seed, features, labels):
     """
     Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
     :param number_of_instances: number of instances
     :param number_of_folds: number of folds
     :param seed: seed
-    :param x: features
-    :param y: labels
+    :param features: features
+    :param labels: labels
     :return: 
     """
     results = []
@@ -75,8 +75,8 @@ def evaluate_methods_for_constructor(ml_methods, number_of_instances,
                                         random_state=seed)
         # noinspection PyDeprecation
         cv_results = cross_validation.cross_val_score(method,
-                                                      x,
-                                                      y,
+                                                      features,
+                                                      labels,
                                                       cv=k_fold,
                                                       scoring=scoring)
 
