@@ -1,6 +1,7 @@
                     BENIGN SAMPLES
 
 ----------------------------------------------------------------------------------------
+Features:
 having_dot_symbol, having_Constructor_word, having_Vbs_or_VBS_word, having_Worm_or_Worms_word, having_Vbswg_word, file_type, file_extension, affected_os, class
 ----------------------------------------------------------------------------------------
                                         1 - test.txt
