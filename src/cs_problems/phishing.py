@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
 import datetime
-from src.parameters import PHISHING_FILE
+from src.parameters import TRAINING_DATA_FOR_PHISHING
 
 # ML methods
 from sklearn.tree import DecisionTreeClassifier
@@ -16,7 +16,7 @@ from sklearn.linear_model import LogisticRegression
 
 #                                   PHISHING PROBLEM
 # ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(PHISHING_FILE)
+dataFrame = pd.read_csv(TRAINING_DATA_FOR_PHISHING)
 
 # features (attributes)
 x = np.array(dataFrame.drop(['Result'], 1))

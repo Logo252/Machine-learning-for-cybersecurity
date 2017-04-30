@@ -3,10 +3,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn import cross_validation
-from src.parameters import TRACKWARE_FILE
 
-# Importing ML classifiers
+# Importing cross_validation method and ML classifiers from sklearn
+from sklearn import cross_validation
+
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -14,22 +14,17 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC  # SVM - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
+# Importing
+from src.parameters import TRAINING_DATA_FOR_CONSTRUTOR
+from src.parameters import TRAINING_DATA_FOR_TRACKWARE
+
 
 def run_script():
     """
     Runs the script as the standalone program
     """
-    data_frame = pd.read_csv(TRACKWARE_FILE, sep=', ', engine='python')
-
-    # Features
-    features = np.array(data_frame.drop(['class'], 1))
-
-    # Labels
-    labels = np.array(data_frame['class'])
-
     # Configuration for cross validation test harness
     number_of_folds = 10
-    number_of_instances = len(features)
 
     # Seed ensures we have the same sequence of random numbers
     seed = 7
@@ -42,19 +37,49 @@ def run_script():
                   ('AdaBoost', AdaBoostClassifier()),
                   ]
 
-    evaluate_methods_for_trackware(ml_methods=ml_methods,
-                                   number_of_instances=number_of_instances,
-                                   number_of_folds=number_of_folds,
-                                   seed=seed,
-                                   features=features,
-                                   labels=labels
-                                   )
+    # ----------------------------- For constructor issue -----------------------------
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_CONSTRUTOR, sep=', ', engine='python')
+
+    # Features
+    features = np.array(data_frame.drop(['class'], 1))
+
+    # Labels
+    labels = np.array(data_frame['class'])
+
+    number_of_instances = len(features)
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 features=features,
+                                 labels=labels
+                                 )
+
+    # ----------------------------- For trackware issue -----------------------------
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_TRACKWARE, sep=', ', engine='python')
+
+    # Features
+    features = np.array(data_frame.drop(['class'], 1))
+
+    # Labels
+    labels = np.array(data_frame['class'])
+
+    number_of_instances = len(features)
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 features=features,
+                                 labels=labels
+                                 )
 
 
-def evaluate_methods_for_trackware(ml_methods, number_of_instances,
-                                   number_of_folds, seed, features, labels):
+def evaluate_methods_performance(ml_methods, number_of_instances,
+                                 number_of_folds, seed, features, labels):
     """
-    Evaluates machine learning methods for cs problem - trackware
+    Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
     :param number_of_instances: number of instances
     :param number_of_folds: number of folds
@@ -97,8 +122,7 @@ def show_plot_of_algorithms_results(methods_names, results):
     """
     Shows plot of machine learning algorithms results
     :param methods_names: Machine learning methods names
-    :param results: Results got from applying methods for trackware
-    :return: 
+    :param results: Results got from applying methods for constructor
     """
     fig = plt.figure()
 
@@ -112,7 +136,7 @@ def show_plot_of_algorithms_results(methods_names, results):
     # y axis title
     plt.ylabel('Accuracy')
 
-    plt.title('Machine learning algorithms applied for trackware')
+    plt.title('Machine learning algorithms applied for constructor')
     # Name of each box
     ax.set_xticklabels(methods_names)
 
