@@ -1,31 +1,5 @@
-              CONSTRUCTOR DATA SAMPLES - from http://openmalware.org/
-------------------------------------------------------------------------------
-@relation trackware
-
-@feature having_dot_symbol { 0, 1 }
-@feature register { 0, 1 }
-@feature file_type { 0, 1 }
-@feature affected_os { 0, 1 }
-@feature HDD { 0, 1 }
-@feature startup_key  { 0, 1 }
-@feature created_folder  { 0, 1 }
-
-@class trackware { 0, 1}
-
-
-                                    7 FEATURES, 1 CLASS
-------------------------------------------------------------------------------
-                                        1 -
-------------------------------------------------------------------------------
-CopyrightCopyright © Zed/[rRlf], 2003.
-Product Zed's Word Macro Virus Constructor (ZWMVC)
-Original name MacroGen.exe
-Internal name MacroGen
-File version 1.00
-Description Word Macro virus constructor
-
-Features values:
-0, 0, 0, 0, 0, 1, 1, 1
-------------------------------------------------------------------------------
-                                        2 -
-------------------------------------------------------------------------------
+having_dot_symbol, register, file_type, affected_os, HDD, startup_key, created_folder, class
+0, 0, 0, 0, 0, 0, 1,
+1, 0, 1, 0, 0, 0, 0,
+1, 0, 1, 0, 1, 1, 1,
+0, 0, 1, 1, 1, 1, 0,
