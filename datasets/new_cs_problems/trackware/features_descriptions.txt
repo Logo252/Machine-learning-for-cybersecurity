@@ -11,6 +11,8 @@
 @class trackware { 0, 1}
 
 ------------------------------------------------------------------------------
+                                    7 FEATURES, 1 CLASS
+------------------------------------------------------------------------------
 •	having_dot_symbol
 Jei failo pavadinime yra 1 simbolis taškas, tuomet failas laikomas – sekančia programa, kitu atveju – palankiu failu.
 

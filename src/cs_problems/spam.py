@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
 import datetime
-from src.parameters import spam_file
+from src.parameters import SPAM_FILE
 
 # ML methods
 from sklearn.neural_network import MLPClassifier
@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 #                                   SPAM PROBLEM
 # ------------------------------------------------------------------------------------
-dataFrame = pd.read_csv(spam_file)
+dataFrame = pd.read_csv(SPAM_FILE)
 
 # features (attributes)
 x = np.array(dataFrame.drop(['class'], 1))

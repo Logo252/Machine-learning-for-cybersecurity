@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import cross_validation
-from src.parameters import constructor_file
+from src.parameters import CONSTRUCTOR_FILE
 
 # Importing ML classifiers
 from sklearn.neighbors import KNeighborsClassifier
@@ -19,7 +19,7 @@ def run_script():
     """
     Runs the script as the standalone program
     """
-    data_frame = pd.read_csv(constructor_file, sep=', ', engine='python')
+    data_frame = pd.read_csv(CONSTRUCTOR_FILE, sep=', ', engine='python')
 
     # Features
     features = np.array(data_frame.drop(['class'], 1))
