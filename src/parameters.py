@@ -4,15 +4,16 @@ import os
 
 dir_name = os.path.dirname
 
-# CS problems training data
+# Training data for CS problems
 spam_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'cs_problems', 'spam', 'training.spambase.data.txt')
 phishing_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'cs_problems', 'phishing', 'training.phishing.data.txt')
 
-# New CS problems
-trackware_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'training.trackware.data.txt')
-constructor_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'training.constructor.data.txt')
+# Training data fir New CS problems
 
-# print(spam_file)
-# print(phishing_file)
-# print(trackware_file)
-# print(constructor_file)
+# Trackware
+trackware_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'training_trackware_data.txt')
+generated_samples_for_trackware = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'generated_samples.txt')
+
+# Constructor
+constructor_file = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'training_constructor_data.txt')
+generated_samples_for_cosntructor = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'generated_samples.txt')

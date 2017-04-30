@@ -1,7 +1,7 @@
                TRACKWARE DATA SAMPLES FROM -
 
 ----------------------------------------------------------------------------------------
-Features:
+Features (class):
 having_dot_symbol, register, file_type, affected_os, HDD, startup_key, created_folder, class
 ----------------------------------------------------------------------------------------
                                         1 -

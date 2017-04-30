@@ -18,9 +18,8 @@ from sklearn.ensemble import AdaBoostClassifier
 def run_script():
     """
     Runs the script as the standalone program
-    :return: 
     """
-    data_frame = pd.read_csv(trackware_file, sep=', ')
+    data_frame = pd.read_csv(trackware_file, sep=', ', engine='python')
 
     # Features
     features = np.array(data_frame.drop(['class'], 1))
@@ -62,7 +61,6 @@ def evaluate_methods_for_trackware(ml_methods, number_of_instances,
     :param seed: seed
     :param features: features
     :param labels: labels
-    :return: 
     """
     results = []
     methods_names = []
