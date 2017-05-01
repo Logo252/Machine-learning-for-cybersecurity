@@ -8,7 +8,8 @@
 @feature having_Worm_or_Worms_word { 0, 1 }
 @feature having_Vbswg_word { 0, 1 }
 @feature file_type  { 0, 1 }
-@feature file_extension  { 0, 1 }
+@feature file_extension_exe  { 0, 1 }
+@feature file_extension_doc  { 0, 1 }
 @feature affected_os  { 0, 1 }
 
 @class constructor { 0, 1}

@@ -14,7 +14,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC  # SVM - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
-# Importing
+# Importing training data files for computer security issues
 from src.parameters import TRAINING_DATA_FOR_CONSTRUTOR
 from src.parameters import TRAINING_DATA_FOR_TRACKWARE
 
@@ -48,36 +48,38 @@ def run_script():
 
     number_of_instances = len(features)
 
+    print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
                                  seed=seed,
                                  features=features,
-                                 labels=labels
-                                 )
+                                 labels=labels,
+                                 problem_title='constructor')
 
-    # ----------------------------- For trackware issue -----------------------------
-    data_frame = pd.read_csv(TRAINING_DATA_FOR_TRACKWARE, sep=', ', engine='python')
-
-    # Features
-    features = np.array(data_frame.drop(['class'], 1))
-
-    # Labels
-    labels = np.array(data_frame['class'])
-
-    number_of_instances = len(features)
-
-    evaluate_methods_performance(ml_methods=ml_methods,
-                                 number_of_instances=number_of_instances,
-                                 number_of_folds=number_of_folds,
-                                 seed=seed,
-                                 features=features,
-                                 labels=labels
-                                 )
+    # # ----------------------------- For trackware issue -----------------------------
+    # data_frame = pd.read_csv(TRAINING_DATA_FOR_TRACKWARE, sep=', ', engine='python')
+    #
+    # # Features
+    # features = np.array(data_frame.drop(['class'], 1))
+    #
+    # # Labels
+    # labels = np.array(data_frame['class'])
+    #
+    # number_of_instances = len(features)
+    #
+    # print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
+    # evaluate_methods_performance(ml_methods=ml_methods,
+    #                              number_of_instances=number_of_instances,
+    #                              number_of_folds=number_of_folds,
+    #                              seed=seed,
+    #                              features=features,
+    #                              labels=labels,
+    #                              problem_title='trackware')
 
 
 def evaluate_methods_performance(ml_methods, number_of_instances,
-                                 number_of_folds, seed, features, labels):
+                                 number_of_folds, seed, features, labels, problem_title):
     """
     Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
@@ -86,6 +88,7 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
     :param seed: seed
     :param features: features
     :param labels: labels
+    :param problem_title: title of the problem
     """
     results = []
     methods_names = []
@@ -115,14 +118,16 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
         print(accuracy_message)
 
     show_plot_of_algorithms_results(methods_names=methods_names,
-                                    results=results)
+                                    results=results,
+                                    problem_title=problem_title)
 
 
-def show_plot_of_algorithms_results(methods_names, results):
+def show_plot_of_algorithms_results(methods_names, results, problem_title):
     """
     Shows plot of machine learning algorithms results
     :param methods_names: Machine learning methods names
     :param results: Results got from applying methods for constructor
+    :param problem_title: title of the problem
     """
     fig = plt.figure()
 
@@ -136,7 +141,7 @@ def show_plot_of_algorithms_results(methods_names, results):
     # y axis title
     plt.ylabel('Accuracy')
 
-    plt.title('Machine learning algorithms applied for constructor')
+    plt.title('Machine learning algorithms applied for {}'.format(problem_title))
     # Name of each box
     ax.set_xticklabels(methods_names)
 

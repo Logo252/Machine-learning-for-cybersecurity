@@ -6,7 +6,8 @@
 @feature having_Worm_or_Worms_word { 0, 1 }
 @feature having_Vbswg_word { 0, 1 }
 @feature file_type  { 0, 1 }
-@feature file_extension  { 0, 1 }
+@feature file_extension_exe  { 0, 1 }
+@feature file_extension_doc  { 0, 1 }
 @feature affected_os  { 0, 1 }
 
 @class constructor { 0, 1}
@@ -31,8 +32,11 @@ Jei failo pavadinime yra žodis „Vbswg“, tuomet failas laikomas – konstruk
 •	file_type
 Jei failo tipas yra vykdomasis, tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
 
-•	file_extension
-Jei failo prievardis yra (.exe) arba (.doc), tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+•	file_extension_exe
+Jei failo prievardis yra (.exe), tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
+
+•	file_extension_doc
+Jei failo prievardis yra (.doc), tuomet failas yra laikomas – konstruktoriumi, kitu atveju – palankiu failu.
 
 •	affected_os
 Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra laikomas – konstruktoriumi, kitu atveju palankiu failu.
