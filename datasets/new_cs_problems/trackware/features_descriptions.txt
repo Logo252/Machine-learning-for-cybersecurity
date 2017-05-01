@@ -14,25 +14,25 @@
                                     7 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
 •	having_dot_symbol
-Jei failo pavadinime yra 1 simbolis taškas, tuomet failas laikomas – sekančia programa, kitu atveju – palankiu failu.
+Jei failo pavadinime yra bent 1 taško simbolis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
 •	register
-Jei paleidus failą yra modifikuojamas registras, jo raktai bei reikšmės, tuomet failas laikomas – sekančia programa, kitu atveju – palankiu failu.
+Jei paleidus failą yra modifikuojamas registras, jo raktai bei reikšmės, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
 •	file_type
-Jei failo tipas yra vykdomasis, tuomet failas yra laikomas – sekančia programa, kitu atveju – palankiu failu.
+Jei failo tipas yra vykdomasis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
 •	affected_os
-Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
 •	HDD
-Jei failas sukelia kietojo disko perpildymą, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+Jei failas sukelia kietojo disko perpildymą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
 •	startup_key
-Jei failas sukuria naują paleisties raktą su vardu „Trackware“ ir reikšme (*.*), tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+Jei failas sukuria naują paleisties raktą su vardu „Trackware“ ir reikšme (*.*), tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
 •	created_folder
-Jei failas sukuria direktorijoje „C:\Program Files\“ ar  „C:\ProgramData\“ aplankalą su vardu „Trackware“, tuomet failas yra laikomas – sekančia programa, kitu atveju palankiu failu.
+Jei failas sukuria direktorijoje „C:\Program Files\“ ar  „C:\ProgramData\“ aplankalą su vardu „Trackware“, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
 •	class
 If class value is 0 - file is benign, otherwise if the value is 1 - file is trackware

@@ -32,7 +32,7 @@ def run_script():
     print("Generated random data has been exported to '{}' for constructor\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
-    sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
+    # sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
 
     # ----------------------- For trackware -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
@@ -43,7 +43,7 @@ def run_script():
     print("Generated random data has been exported to '{}' for trackware\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
-    sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
+    # sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
 
 
 def export_random_data(file_name, no_of_features, data_samples):
