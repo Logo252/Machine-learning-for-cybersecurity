@@ -11,7 +11,7 @@ from src.parameters import NO_OF_TRACKWARE_FEATURES
 from src.parameters import LISTS_OF_TRACKWARE_SAMPLES
 
 # Constants
-NO_OF_SAMPLES = 100  # Number of generated samples for each problem
+NO_OF_SAMPLES = 1000  # Number of generated samples for each problem
 
 # Possible values of the feature
 ZERO = 0
@@ -32,7 +32,7 @@ def run_script():
     print("Generated random data has been exported to '{}' for constructor\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
-    sort_file_lines_by_category(file_name, no_of_features)
+    sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
 
     # ----------------------- For trackware -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
@@ -43,7 +43,7 @@ def run_script():
     print("Generated random data has been exported to '{}' for trackware\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
-    sort_file_lines_by_category(file_name, no_of_features)
+    sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
 
 
 def export_random_data(file_name, no_of_features, data_samples):

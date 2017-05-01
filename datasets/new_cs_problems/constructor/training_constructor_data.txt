@@ -1,8 +1,8 @@
 having_dot_symbol, having_Constructor_word, having_Vbs_or_VBS_word, having_Worm_or_Worms_word, having_Vbswg_word, file_type, file_extension_exe, file_extension_doc, affected_os, class
-0, 1, 0, 0, 0, 1, 0, 1, 1, 1
-0, 0, 1, 1, 0, 1, 1, 0, 1, 1
-0, 0, 0, 0, 0, 0, 0, 0, 1, 1
-0, 0, 0, 0, 0, 1, 0, 1, 1, 1
-1, 0, 0, 0, 0, 1, 1, 0, 1, 1
-0, 0, 0, 0, 0, 1, 1, 0, 1, 1
-0, 0, 0, 0, 1, 1, 1, 0, 1, 1
+0, 1, 0, 0, 0, 1, 0, 1, 1
+0, 0, 1, 1, 0, 1, 1, 0, 1
+0, 0, 0, 0, 0, 0, 0, 0, 1
+0, 0, 0, 0, 0, 1, 0, 1, 1
+1, 0, 0, 0, 0, 1, 1, 0, 1
+0, 0, 0, 0, 0, 1, 1, 0, 1
+0, 0, 0, 0, 1, 1, 1, 0, 1
