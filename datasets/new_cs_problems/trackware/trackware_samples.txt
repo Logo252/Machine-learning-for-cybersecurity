@@ -15,9 +15,25 @@
 
                                     7 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
-                                        1 -
+                                        1 - Trackware.Alexa
 ------------------------------------------------------------------------------
-Test
+File Names:
+AlxRes.dll AlxTB1.dll
+Systems Affected:
+Windows
+
+When Trackware.Alexa is executed, it performs the following actions:
+Creates the following registry subkeys
+
+Creates the following files:
+
+%Windir%\System32\AlxRes.dll
+%Windir%\System32\AlxTB1.dll
+%ProgramFiles%\Alexa Toolbar\uninstall.exe
+
+Displays an Alexa toolbar when Internet Explorer is opened.
+
+Adds a button with Alexa's logo (the letter "a" in a blue circle) to the Standard Buttons toolbar. This button is used to make the Alexa toolbar appear and disappear.
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 1
@@ -29,11 +45,5 @@ Test
 Features values:
 0, 0, 0, 0, 0, 1, 1, 1
 ------------------------------------------------------------------------------
-                                SUM UP FEATURES OF ALL SAMPLES (WITHOUT DUPLICATES) (WITH CLASS)
+                                SUM UP FEATURES OF ALL SAMPLES (WITHOUT DUPLICATES)
 ------------------------------------------------------------------------------
-0, 1, 0, 0, 0, 1, 1, 1
-0, 0, 0, 0, 0, 0, 0, 1
-1, 0, 0, 0, 0, 1, 1, 1
-0, 0, 1, 1, 0, 1, 1, 1
-0, 0, 0, 0, 1, 1, 1, 1
-0, 0, 0, 0, 0, 1, 1, 1

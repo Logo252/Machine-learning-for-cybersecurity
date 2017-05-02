@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import numpy as np
 import random
 
-from src.parameters import GENERATED_SAMPLES_FIILE_FOR_CONSTRUCTOR
-from src.parameters import NO_OF_CONSTRUCTOR_FEATURES
+# Importing VarianceThreshold (Feature selector) from sklearn
+from sklearn.feature_selection import VarianceThreshold
+
+from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
 from src.parameters import LISTS_OF_CONSTRUCTOR_SAMPLES
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-from src.parameters import NO_OF_TRACKWARE_FEATURES
 from src.parameters import LISTS_OF_TRACKWARE_SAMPLES
 
 # Constants
-NO_OF_SAMPLES = 1000  # Number of generated samples for each problem
+NO_OF_SAMPLES = 500  # Number of generated samples for each problem
 
 # Possible values of the feature
 ZERO = 0
@@ -24,11 +26,18 @@ def run_script():
     """
 
     # ----------------------- For constructor -----------------------
-    file_name = GENERATED_SAMPLES_FIILE_FOR_CONSTRUCTOR
-    no_of_features = NO_OF_CONSTRUCTOR_FEATURES
+    file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
     data_samples = LISTS_OF_CONSTRUCTOR_SAMPLES
 
-    export_random_data(file_name, no_of_features, data_samples)
+    updated_data_samples = remove_unneeded_features(data_samples)
+    modified_samples = add_category_to_samples(1, updated_data_samples)
+    no_of_features = len(modified_samples) - 1
+
+    # print(updated_data_samples)
+    # print(modified_samples)
+    # exit(0)
+
+    export_random_data(file_name, no_of_features, modified_samples)
     print("Generated random data has been exported to '{}' for constructor\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
@@ -36,14 +45,45 @@ def run_script():
 
     # ----------------------- For trackware -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-    no_of_features = NO_OF_TRACKWARE_FEATURES
     data_samples = LISTS_OF_TRACKWARE_SAMPLES
+
+    updated_data_samples = remove_unneeded_features(data_samples)
+    modified_samples = add_category_to_samples(1, updated_data_samples)
+    no_of_features = len(modified_samples) - 1
+
+    # print(updated_data_samples)
+    # print(modified_samples)
+    # exit(0)
 
     export_random_data(file_name, no_of_features, data_samples)
     print("Generated random data has been exported to '{}' for trackware\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 to 1
+
+
+def remove_unneeded_features(data_samples):
+    """
+    Removes features that have the same value in given data samples.
+    :param data_samples: given data samples
+    :return: updated data samples
+    """
+    sel = VarianceThreshold()
+    return sel.fit_transform(data_samples)
+
+
+def add_category_to_samples(category, samples):
+    """
+    Adds category to all given data samples.
+    :param category: Given category - 1 or 0
+    :param samples: data samples
+    :return: data samples with category
+    """
+    modified_samples = []
+    for sample in samples:
+        updated_sample = list(np.append(sample, [category]))
+        modified_samples.append(updated_sample)
+    return modified_samples
 
 
 def export_random_data(file_name, no_of_features, data_samples):
@@ -53,7 +93,9 @@ def export_random_data(file_name, no_of_features, data_samples):
     :param no_of_features: number of features
     :param data_samples: malicious data samples
     """
-    with open(file_name, "w") as txt_file:
+    add_header_to_file(file_name, no_of_features)
+
+    with open(file_name, "a") as txt_file:
         i = 1
         while i <= NO_OF_SAMPLES:
             i += 1
@@ -86,6 +128,19 @@ def export_random_data(file_name, no_of_features, data_samples):
             txt_file.write('\n')  # new line
 
 
+def add_header_to_file(file, no_of_features):
+    """
+    Adds header to the given file.
+    :param file: file name
+    :param no_of_features: number of features
+    """
+    with open(file, "w") as txt_file:
+        for number in range(1, no_of_features + 1):
+            txt_file.write('feature_{}, '.format(number))
+        txt_file.write('class')
+        txt_file.write('\n')
+
+
 def remove_duplicate_lines_in_file(file_name):
     """
     Removes duplicate lines in the specified file.
@@ -93,9 +148,11 @@ def remove_duplicate_lines_in_file(file_name):
     """
     with open(file_name, 'r') as read:
         lines = read.readlines()
-        lines_set = set(lines)
+        header = lines[0]
+        lines_set = set(lines[1:])
 
     with open(file_name, 'w') as out:
+        out.write(header)
         for line in lines_set:
             out.write(line)
 

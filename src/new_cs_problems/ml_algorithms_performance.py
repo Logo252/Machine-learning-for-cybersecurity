@@ -1,22 +1,25 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+# np.set_printoptions(threshold=np.inf)  # To show full numpy array for debugging
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Importing cross_validation method and ML classifiers from sklearn
+# Importing cross_validation method
 from sklearn import cross_validation
 
+# Importing ML classifiers from sklearn
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC  # SVM - Support Vector Machines
+from sklearn.svm import SVC  # svm - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
 # Importing training data files for computer security issues
-from src.parameters import TRAINING_DATA_FOR_CONSTRUTOR
-from src.parameters import TRAINING_DATA_FOR_TRACKWARE
+from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
+from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 
 
 def run_script():
@@ -38,7 +41,7 @@ def run_script():
                   ]
 
     # ----------------------------- For constructor issue -----------------------------
-    data_frame = pd.read_csv(TRAINING_DATA_FOR_CONSTRUTOR, sep=', ', engine='python')
+    data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
 
     # Features
     features = np.array(data_frame.drop(['class'], 1))
@@ -58,7 +61,7 @@ def run_script():
                                  problem_title='constructor')
 
     # # ----------------------------- For trackware issue -----------------------------
-    # data_frame = pd.read_csv(TRAINING_DATA_FOR_TRACKWARE, sep=', ', engine='python')
+    # data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
     #
     # # Features
     # features = np.array(data_frame.drop(['class'], 1))
