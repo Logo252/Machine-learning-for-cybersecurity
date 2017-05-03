@@ -6,10 +6,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Importing cross_validation method
 from sklearn import cross_validation
 
-# Importing ML classifiers from sklearn
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -17,7 +15,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC  # svm - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
-# Importing training data files for computer security issues
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 

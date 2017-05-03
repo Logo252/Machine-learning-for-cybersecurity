@@ -3,14 +3,13 @@
 import numpy as np
 import random
 
-# Importing VarianceThreshold (Feature selector) from sklearn
 from sklearn.feature_selection import VarianceThreshold
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-from src.parameters import LISTS_OF_CONSTRUCTOR_SAMPLES
+from src.parameters import CONSTRUCTOR_SAMPLES
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-from src.parameters import LISTS_OF_TRACKWARE_SAMPLES
+from src.parameters import TRACKWARE_SAMPLES
 
 # Constants
 NO_OF_SAMPLES = 500  # Number of generated samples for each problem
@@ -27,15 +26,11 @@ def run_script():
 
     # ----------------------- For constructor -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-    data_samples = LISTS_OF_CONSTRUCTOR_SAMPLES
+    data_samples = CONSTRUCTOR_SAMPLES
 
     updated_data_samples = remove_unneeded_features(data_samples)
     modified_samples = add_category_to_samples(1, updated_data_samples)
     no_of_features = len(modified_samples) - 1
-
-    # print(updated_data_samples)
-    # print(modified_samples)
-    # exit(0)
 
     export_random_data(file_name, no_of_features, modified_samples)
     print("Generated random data has been exported to '{}' for constructor\n".format(file_name))
@@ -45,15 +40,11 @@ def run_script():
 
     # ----------------------- For trackware -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-    data_samples = LISTS_OF_TRACKWARE_SAMPLES
+    data_samples = TRACKWARE_SAMPLES
 
     updated_data_samples = remove_unneeded_features(data_samples)
     modified_samples = add_category_to_samples(1, updated_data_samples)
     no_of_features = len(modified_samples) - 1
-
-    # print(updated_data_samples)
-    # print(modified_samples)
-    # exit(0)
 
     export_random_data(file_name, no_of_features, data_samples)
     print("Generated random data has been exported to '{}' for trackware\n".format(file_name))
