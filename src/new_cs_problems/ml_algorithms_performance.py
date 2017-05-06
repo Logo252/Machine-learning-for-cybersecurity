@@ -40,53 +40,53 @@ def run_script():
     # ----------------------------- For constructor issue -----------------------------
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
 
-    # Features
-    features = np.array(data_frame.drop(['class'], 1))
+    # Instances
+    instances = np.array(data_frame.drop(['class'], 1))
 
     # Labels
     labels = np.array(data_frame['class'])
 
-    number_of_instances = len(features)
+    number_of_instances = len(instances)
 
     print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
                                  seed=seed,
-                                 features=features,
+                                 instances=instances,
                                  labels=labels,
                                  problem_title='constructor')
 
     # # ----------------------------- For trackware issue -----------------------------
-    # data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
-    #
-    # # Features
-    # features = np.array(data_frame.drop(['class'], 1))
-    #
-    # # Labels
-    # labels = np.array(data_frame['class'])
-    #
-    # number_of_instances = len(features)
-    #
-    # print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
-    # evaluate_methods_performance(ml_methods=ml_methods,
-    #                              number_of_instances=number_of_instances,
-    #                              number_of_folds=number_of_folds,
-    #                              seed=seed,
-    #                              features=features,
-    #                              labels=labels,
-    #                              problem_title='trackware')
+    data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
+
+    # Instances
+    instances = np.array(data_frame.drop(['class'], 1))
+
+    # Labels
+    labels = np.array(data_frame['class'])
+
+    number_of_instances = len(instances)
+
+    print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 instances=instances,
+                                 labels=labels,
+                                 problem_title='trackware')
 
 
 def evaluate_methods_performance(ml_methods, number_of_instances,
-                                 number_of_folds, seed, features, labels, problem_title):
+                                 number_of_folds, seed, instances, labels, problem_title):
     """
     Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
     :param number_of_instances: number of instances
     :param number_of_folds: number of folds
     :param seed: seed
-    :param features: features
+    :param instances: instances
     :param labels: labels
     :param problem_title: title of the problem
     """
@@ -101,7 +101,7 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
                                         random_state=seed)
         # noinspection PyDeprecation
         cv_results = cross_validation.cross_val_score(method,
-                                                      features,
+                                                      instances,
                                                       labels,
                                                       cv=k_fold,
                                                       scoring=scoring)

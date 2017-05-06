@@ -1,4 +1,4 @@
-              TRACKWARE DATA SAMPLES - from generated_samples.txt
+              TRACKWARE DATA SAMPLES - from https://www.symantec.com
 ------------------------------------------------------------------------------
 @relation trackware
 
@@ -15,7 +15,78 @@
 
                                     7 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
-                                        1 - Trackware.Alexa
+                                        1 - Trackware.7FaSStSearch
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+When Trackware.7FaSStSearch is installed, it performs the following actions:
+Displays the following End User License Agreement (EULA) that a user must agree to before the program is installed:
+
+"You are in full agreement that to gather the information necessary to provide our Information service requires our Software to gather URL and duration information of all web sites visits by the person using your computer while browsing the Internet. This information is then transferred to our database in order to provide you and other users with our 7FaSSt Search(tm) traffic reports. You are in full agreement to the transfer of any and all information necessary to provide the 7FaSSt Search(tm) services to others."
+
+Registers itself as a Browser Helper Object so that it will run each time Internet Explorer starts.
+
+Note: Browser Helper Objects require Internet Explorer 4.0, or later to run.
+
+Submits Internet usage statistics to fstrack.7search.com which redirects to data.browseraccelerator.com.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        2 - Trackware.ActivShopper
+------------------------------------------------------------------------------
+CompBar.dll,BarLcher.dll
+Systems Affected:
+Windows
+
+When Adware.ActivShopper is installed, it does the following:
+Creates the following files:
+
+%UserProfile%\Desktop\ActiveShopper Comparative Shopping.lnk
+%UserProfile%\Favorites\ActiveShopper Comparative Shopping.lnk
+%UserProfile%\Favorites\links\ActiveShopper Comparative Shopping.lnk
+%UserProfile%\Start Menu\ActiveShopper Comparative Shopping.lnk
+%UserProfile%\Start Menu\Programs\ActiveShopper\ActiveShopper HomePage.lnk
+%UserProfile%\Start Menu\Programs\ActiveShopper\Help & Support Center.lnk
+%UserProfile%\Start Menu\Programs\ActiveShopper\Take a Tour.lnk
+%UserProfile%\Start Menu\Programs\ActiveShopper\Test ActiveShopper.lnk
+%UserProfile%\Start Menu\Programs\ActiveShopper\User Manual.lnk
+%ProgramFiles%\ActiveShopper\BarLcher.dll
+%ProgramFiles%\ActiveShopper\CompBar.dll
+%ProgramFiles%\ActiveShopper\TestActiv.htm
+%ProgramFiles%\ActiveShopper\Uninstall.exe
+%ProgramFiles%\ActiveShopper\activ.ico
+
+Note:
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+%UserProfile% is a variable that refers to the current user's profile folder. By default, this is C:\Documents and Settings\[CURRENT USER] (Windows NT/2000/XP).
+
+Installs a Browser Helper Object by adding the following registry subkey:
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{1ADBCCE8-CF84-441E-9B38-AFC7A19C06A4}
+
+Adds the following registry subkeys:
+
+Adds the following value:
+
+"Url" = "[http://]data2.activshopper.com/active/[REMOVED]/redir_sidebar.php"
+
+to the following registry subkey:
+
+HKEY_CLASSES_ROOT\CLSID\{3EA5C408-2437-4c40-ADAC-DFDA9AEEEA96}\Instance
+\InitPropertyBag
+
+Contacts several Web sites on the activeshopper.com domain.
+
+Monitors visited Web sites and may display advertisements or offers relating to specific Web sites.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        3 - Trackware.Alexa
 ------------------------------------------------------------------------------
 File Names:
 AlxRes.dll AlxTB1.dll
@@ -23,7 +94,15 @@ Systems Affected:
 Windows
 
 When Trackware.Alexa is executed, it performs the following actions:
-Creates the following registry subkeys
+Creates the following registry subkeys:
+
+Adds the value:
+
+"Alexa Toolbar" = ""
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\User Agent\Post Platform
 
 Creates the following files:
 
@@ -31,19 +110,1317 @@ Creates the following files:
 %Windir%\System32\AlxTB1.dll
 %ProgramFiles%\Alexa Toolbar\uninstall.exe
 
+Notes:
+%Windir% is a variable that refers to the Windows installation folder. By default, this is C:\Windows or C:\Winnt.
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
 Displays an Alexa toolbar when Internet Explorer is opened.
 
 Adds a button with Alexa's logo (the letter "a" in a blue circle) to the Standard Buttons toolbar. This button is used to make the Alexa toolbar appear and disappear.
 
-Features values:
-0, 0, 0, 0, 0, 1, 1, 1
-------------------------------------------------------------------------------
-                                        2 -
-------------------------------------------------------------------------------
-Test
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        4 - Trackware.Anquiro
+------------------------------------------------------------------------------
+File Names:
+anquiro.dll
+Systems Affected:
+Windows
+
+When Trackware.Anquiro is installed it does the following:
+Creates the following files:
+
+%ProgramFiles%\aniquro\anquiro.dll
+%ProgramFiles%\aniquro\anquiro.inf
+%ProgramFiles%\aniquro\basis.xml
+%ProgramFiles%\aniquro\Cache\522ea8a804a3e7e4b93df15a1539fc53.xml
+%ProgramFiles%\aniquro\favicon.ico
+%ProgramFiles%\aniquro\nav.bmp
+%ProgramFiles%\aniquro\newversion.txt
+%ProgramFiles%\aniquro\toolbar.crc
+%ProgramFiles%\aniquro\version.txt
+
+Note:
+These files may also be created in %ProgramFiles%\IEToolbar
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Creates the following registry subkeys:
+
+Adds the following value:
+
+"{A4F64D63-3576-4754-8DD5-4D0A49345FD5}" = "00"
+
+to the registry subkeys:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar
+HKEY_ALL_USERS\Software\Microsoft\Internet Explorer\Toolbar\WebBrowser
+HKEY_ALL_USERS\Software\Microsoft\Internet Explorer\Extensions\CmdMapping
+
+Adds the following value:
+
+"{12F02779-6D88-4958-8AD3-83C12D86ADC7}" = ""
+
+to the registry subkey:
+
+HKEY_ALL_USERS\Software\Microsoft\Internet Explorer\URLSearchHooks
+
+Adds the following value:
+
+"C%Program Files%aniquro" = "C:\Program Files\aniquro"
+
+to the registry subkey:
+
+HKEY_ALL_USERS\Software\WinRAR SFX
+
+Changes the following value:
+
+"Start Page" = "[http://]www.anquiro.com/[REMOVED]"
+
+in the registry subkey:
+
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main
+
+which changes your Internet Explorer home page settings.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        5 - Trackware.Baigoo
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+Trackware.Baigoo is a trackware program that tracks searches on Chinese search engines. Any information that a user enters into a search engine is sent to other remote users.
+
+When the program executes, it creates the following folders:
+C:\Program Files\baigoo\plugin\bgoobar
+C:\Program Files\baigoo\BaiGoo
+C:\Program Files\baigoo\plugin
+C:\Program Files\baigoo
+
+The program then creates some of the following files:
+C:\Program Files\baigoo\baigoo.exe
+C:\Program Files\baigoo\baigoo1.ini
+C:\Program Files\baigoo\baigoo2.ini
+C:\Program Files\baigoo\baigoo3.ini
+C:\Program Files\baigoo\BaigooBH.dll
+C:\Program Files\baigoo\baigoohk.dll
+C:\Program Files\baigoo\baigoosv.exe
+C:\Program Files\baigoo\bgooball.dll
+C:\Program Files\baigoo\bgoocfg.
+C:\Program Files\baigoo\bgooex.dll
+C:\Program Files\baigoo\bgoohk.dll
+C:\Program Files\baigoo\bgook.dll
+C:\Program Files\baigoo\bgoomain.exe
+C:\Program Files\baigoo\BGooSrv.ini
+C:\Program Files\baigoo\mtsrv.exe
+C:\Program Files\baigoo\plugin\bgoobar\band.ini
+C:\Program Files\baigoo\plugin\bgoobar\band1033.ini
+C:\Program Files\baigoo\plugin\bgoobar\band2052.ini
+C:\Program Files\baigoo\plugin\bgoobar\bgoobar.dll
+C:\Program Files\baigoo\plugin\bgoobar\bres1033.dll
+C:\Program Files\baigoo\plugin\bgoobar\bres2052.dll
+C:\Program Files\baigoo\plugin\bgoobar\plugin.ini
+C:\Program Files\baigoo\plugin\bgoocos\bgoocos.dll
+C:\Program Files\baigoo\plugin\bgoocos\coscfg.ini
+C:\Program Files\baigoo\plugin\bgoocos\plugin.ini
+C:\Program Files\baigoo\plugin\bgoolink\bgoolink.dll
+C:\Program Files\baigoo\plugin\bgoolink\linkcfg.ini
+C:\Program Files\baigoo\plugin\bgoolink\plugin.ini
+C:\Program Files\baigoo\uninst.exe
+
+The program then creates some of the following registry subkeys:
+
+The program also creates the following registry entry so that the risk executes whenever Windows starts:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\"baigoo.exe" = "C:\PROGRA~1\baigoo\baigoo.exe"
+
+The program gathers information from the compromised computer when a search engine is used. The program then connects to the following URLs and sends the information to a remote user:
+www.baigoo.com
+www.yok.com
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        6 - Trackware.Bazookabar
+------------------------------------------------------------------------------
+File Names:
+iserstararcticsbar.dll,bazookabar.exe
+Systems Affected:
+Windows
+
+When BazookaBar is executed, it performs the following actions:
+Creates the following files:
+
+%ProgramFiles%\BazookaBar\ActiveWin32.exe
+%ProgramFiles%\BazookaBar\Bar.exe (included in installer, detected as Trackware.Bazookabar)
+%ProgramFiles%\BazookaBar\BazookaBar.exe (installs an uninstaller, the full installer is also named Bazookabar.exe)
+%ProgramFiles%\BazookaBar\CloseExplorer.exe (closes Explorer and Internet Explorer)
+%ProgramFiles%\BazookaBar\CloseExploreru.exe (closes Explorer and Internet Explorer)
+%ProgramFiles%\BazookaBar\RegMfc.exe (sets the registry values)
+%ProgramFiles%\BazookaBar\userstararticsbar.dll (Internet Explorer Toolbar, detected as Trackware.Bazookabar)
+
+Note: %ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Creates the following registry entries:
+HKEY_CLASSES_ROOT\BazookaBar.BazookaBarBand.1
+HKEY_CLASSES_ROOT\BazookaBar.BazookaBarBand
+HKEY_CLASSES_ROOT\CLSID\{7891DA15-428E-11D7-BCC1-00A024831A8C}
+HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Toolbar\{7891DA15-428E-11D7-BCC1-00A024831A8C}
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\BazookaBar
+HKEY_CLASSES_ROOT\TypeLib\{DCB8F6AD-65FD-42BF-B0F8-549FCFE717C0}
+HKEY_CLASSES_ROOT\Interface\{D4242DC5-1AEF-46C1-A09A-9136E5F9871E}
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        7 - Trackware.BrowserAccel
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+When Trackware.BrowserAccel runs, it performs the following actions:
+Creates the following files:
+
+C:\Program Files\Browser Accelerator\BrowserAccelerator.dll
+C:\Program Files\Browser Accelerator\BrowserAccelerator.log
+
+Note: BrowserAccelerator.log, is an installation log file and will not be detected.
+
+Creates the following registry entries:
+
+Collects information about the Web sites visited and searched for and sends this information to data.browseraccelerator.com/[REMOVED].
+
+Periodically updates its contents by contacting www.client.browseraccelerator.com/[REMOVED].
+
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        8 - Trackware.CasinoBar
+------------------------------------------------------------------------------
+Windows
+The program must be manually downloaded.
+
+When the program is executed, it creates the following folder:
+%ProgramFiles%\Online Casino Extra Toolbar\Cache
+
+The program also creates the following files:
+%ProgramFiles%\Online Casino Extra Toolbar\00star.gif
+%ProgramFiles%\Online Casino Extra Toolbar\basis.xml
+%ProgramFiles%\Online Casino Extra Toolbar\cab.in.work.temp.crc
+%ProgramFiles%\Online Casino Extra Toolbar\cab.in.work.temp.dll
+%ProgramFiles%\Online Casino Extra Toolbar\favicon.ico
+%ProgramFiles%\Online Casino Extra Toolbar\icons.bmp
+%ProgramFiles%\Online Casino Extra Toolbar\infobul1.gif
+%ProgramFiles%\Online Casino Extra Toolbar\msvcp60.dll
+%ProgramFiles%\Online Casino Extra Toolbar\msvcrt.dll
+%ProgramFiles%\Online Casino Extra Toolbar\news.html
+%ProgramFiles%\Online Casino Extra Toolbar\newscroll.html
+%ProgramFiles%\Online Casino Extra Toolbar\options.html
+%ProgramFiles%\Online Casino Extra Toolbar\rank.html
+%ProgramFiles%\Online Casino Extra Toolbar\toolbarinfo.html
+%ProgramFiles%\Online Casino Extra Toolbar\toolbarskin.bmp
+%ProgramFiles%\Online Casino Extra Toolbar\version.txt
+%ProgramFiles%\Online Casino Extra Toolbar\xtralogo.bmp
+
+
+Next, the program creates the following registry entries:
+HKEY_USERS\[ALL USERS]\Software\Microsoft\Internet Explorer\Toolbar\"WebBrowser" = "{C49DD894-C6DE-4910-8C41-BA20F852D8BC}"
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar\"{C49DD894-C6DE-4910-8C41-BA20F852D8BC}" = "00"
+
+
+The program then increments the NextId value in the following registry subkey by 1:
+HKEY_USERS\[ALL USERS]\Software\Microsoft\Internet Explorer\Extensions\CmdMapping\
+
+For example, before the program is executed, the value in the subkey might be the following:
+HKEY_USERS\[ALL USERS]\Software\Microsoft\Internet Explorer\Extensions\CmdMapping\"NextId" = "2002"
+
+The program changes the value in the subkey to the following:
+HKEY_USERS\[ALL USERS]\Software\Microsoft\Internet Explorer\Extensions\CmdMapping\"NextId" = "2003"
+
+The program then creates the following registry entry:
+HKEY_USERS\[ALL USERS]\Software\Microsoft\Internet Explorer\Extensions\CmdMapping\"{C49DD894-C6DE-4910-8C41-BA20F852D8BC}" = "[NEW VALUE OF NextId]"
+
+It then creates the following registry subkeys:
+
+The program then tracks Internet activity including Web sites visited.
+
+The gathered information is then sent to a remote location.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        9 - Trackware.Dogpile
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+When the program is installed, it creates the following files:
+%ProgramFiles%\DogpileToolbar
+%ProgramFiles%\DOGPIL~1\INSTALL.LOG
+%ProgramFiles%\DogpileToolbar\tbinstall.log
+%ProgramFiles%\DogpileToolbar\ultrabar.dll
+%ProgramFiles%\DogpileToolbar\UNWISE.EXE
+
+Next, the program creates the following registry subkeys:
+
+It also creates the following registry entries:
+
+It also modifies the following registry entries:
+
+The program stores icons, logos, sounds, and template files in the following location:
+C:\Document and Settings\Administrator\Application Data\Infospace\DogpileToobar
+
+After the installation, the following Dogpile toolbar appears when Internet Explorer is opened:
+
+The toolbar performs the following functions:
+Web Search: Finds results from the Web's leading search engines.
+White and Yellow Pages.
+Popup Blocker.
+Ticker for getting news information.
+Cursor Search: Searches any word(s) on a Web page or Word Document by right-clicking your mouse.
+
+When a search is entered into the Dogpile toolbar the browser is directed to clickit.go2net.com. This service, in turn, directs you to the target site.
+
+The program then collects the following information:
+IP address
+Referral data
+Browser type
+Platform type
+Date and time that the InfoSpace Site was visited
+Search terms
+Visited links
+
+InfoSpace analyzes the information to examine trends, administer the site, track user
+movement in the aggregate, and gather broad demographic information for aggregate use.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        10 - Trackware.Energyplus
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+When Trackware.Energyplus is executed, it performs the following actions:
+Creates the following files:
+
+%SystemDrive%\Documents and Settings\All Users\Start Menu\Programs\E-nrgyPlus\E-nrgyPlus.lnk
+%SystemDrive%\Documents and Settings\All Users\Start Menu\Programs\E-nrgyPlus\homepage.lnk
+%SystemDrive%\Documents and Settings\All Users\Start Menu\Programs\E-nrgyPlus\UnInstall.lnk
+%ProgramFiles%\E-nrgyPlus\E-nrgyPlus.exe
+
+Note:
+%SystemDrive% is a variable that refers to the drive on which Windows is installed. By default, this is drive C.
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Creates the following registry keys:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dial
+
+Adds the values:
+
+"E-nrgyPlus" = "|"
+"dial" = "|"
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\User Agent\Post Platform
+
+Adds the value:
+
+"E-nrgyPlus" = "C:\Program Files\E-nrgyPlus\E-nrgyPlus.exe"
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+so that it runs everytime Windows starts.
+
+Monitors Internet activity, including URLs visited.
+
+Monitors popular search and e-commerce Web sites, including the following:
+
+[http://]www.yahoo.com
+[http://]www.xanga.com
+[http://]www.tripod.com
+[http://]www.monster.com
+[http://]www.icq.com
+[http://]www.mlb.com
+[http://]www.microsoft.com
+[http://]www.mapquest.com
+[http://]www.lycos.com
+[http://]www.nba.com
+[http://]www.netscape.com
+[http://]www.nytimes.com
+[http://]www.ebay.com
+[http://]www.alexa.com
+[http://]www.cnn.com
+[http://]www.apple.com
+[http://]www.amazon.com
+[http://]www.alibaba.com
+
+Sends the following system information to the author:
+
+Operating System Version and Service Pack information
+Whether a modem is installed or not
+Type of Internet connection
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        11 - Trackware.Freesave
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+The risk is manually installed by the user.
+
+When the risk is executed, it creates the following folder:
+%ProgramFiles%\free-save
+
+It then creates the following files:
+%ProgramFiles%\free-save\$$$free-save.dll
+%ProgramFiles%\free-save\$$$free-save.exe
+%ProgramFiles%\free-save\free-saver.exe
+%ProgramFiles%\free-save\gmlist.dat
+%ProgramFiles%\free-save\mcidlist.nau
+%ProgramFiles%\free-save\naelist.nau
+%ProgramFiles%\free-save\naelist2.nau
+%ProgramFiles%\free-save\nallist.nau
+%ProgramFiles%\free-save\nanolist.nau
+%ProgramFiles%\free-save\naulist.nau
+%ProgramFiles%\free-save\naulist2.nau
+%ProgramFiles%\free-save\noaflist.nau
+%ProgramFiles%\free-save\uninstall.exe
+
+Next it creates the following registry entry so that it runs every time Windows starts:
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\"free-save" = "[ORIGINAL PATH TO SECURITY RISK EXECUTABLE]"
+
+It creates the following registry subkeys:
+
+The risk then sends browser information and websites visited to a predetermined URL.
+
+It also contacts the following remote locations for updates:
+file.free-save.com
+reward.free-save.com
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        12 - Trackware.Gemius
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+When the program is executed, it creates the following files:
+C:\Documents and Settings\All Users\Start Menu\Programs\NetPanel\Gemius SA..lnk
+%ProgramFiles%\NetPanel\filelist.dat
+%ProgramFiles%\NetPanel\gemius.url
+%ProgramFiles%\NetPanel\IEHelper.dll
+%ProgramFiles%\NetPanel\NetPanel.exe
+%ProgramFiles%\NetPanel\netpanel.ini
+%ProgramFiles%\NetPanel\netpanel.new
+%ProgramFiles%\NetPanel\nmprivate.key
+%ProgramFiles%\NetPanel\nmpublic.key
+%ProgramFiles%\NetPanel\Remove.exe
+%ProgramFiles%\NetPanel\Starter.exe
+
+Next, the program creates the following registry subkeys:
+
+The risk also adds the following registry entry, so that it starts when Windows starts:
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\"NetPanel" = ""%ProgramFiles%\NetPanel\Starter.exe" /path="C:\Program Files\NetPanel""
+
+The program then monitors and records networking activity and sends the gathered information to a remote server.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        13 - Trackware.Icarus
+------------------------------------------------------------------------------
+ystems Affected:
+Windows
+Once the security risk is executed, it creates the following folder:
+%ProgramFiles%\Icarus2
+
+It then creates the following files:
+%ProgramFiles%\Icarus2\unins000.dat
+%ProgramFiles%\Icarus2\unins000.exe
+%ProgramFiles%\Icarus2\UpdateChk.exe
+%ProgramFiles%\Icarus2\Icarus2.dll
+
+The program creates following registry entry, so that it runs every time Windows starts:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\"Icarus2" = "%ProgramFiles%\Icarus2\UpdateChk.exe"
+
+It also creates the following registry subkeys:
+
+Next, the security risk creates the following registry entries:
+
+It then tracks Web sites visited and displays advertisements.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        14 - Trackware.IEMenuExt
+------------------------------------------------------------------------------
+File Names:
+tbextn.dll IEMenuExtension.exe tbIsra.dll
+Systems Affected:
+Windows
+
+When Trackware.IEMenuExt is executed, it performs the following actions:
+Creates the following files:
+
+%ProgramFiles%\IEMenuExtension\tbextn.dll
+%ProgramFiles%\IEMenuExtension\INSTALL.LOG
+%ProgramFiles%\IEMenuExtension\logo.ico
+%ProgramFiles%\IEMenuExtension\toolbar.cfg
+%ProgramFiles%\IEMenuExtension\UNWISE.EXE
+%ProgramFiles%\IEMenuExtension\TBlogin.users.EffectiveBrand.com.
+%ProgramFiles%\IEMenuExtension\rss\rss_html_template.html
+%UserProfile%\Start Menu\Programs\Israel_Radio Toolbar for internet expo\How To Uninstall.lnk
+%UserProfile%\Administrator\Start Menu\Programs\Israel_Radio Toolbar for internet expo\Israel_Radio Toolbar for internet expo.lnk
+%ProgramFiles%\Israel_Radio\INSTALL.LOG
+%ProgramFiles%\Israel_Radio\LocalSettings.txt
+%ProgramFiles%\Israel_Radio\rss\http___www_globes_co_il_WebService_Rss_RssFeeder_asmx_FeederNode_iID=942.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_haaretz_com_hasen_objects_pages_enewsRss_jhtml.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_haaretz_com_hasen_objects_pages_enewsRss_jhtml_structured.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_jpost_com_servlet_Satellite_pagename=JPost_P_Ext_RSS_RSS&cid=1123495333346.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_jpost_com_servlet_Satellite_pagename=JPost_P_Ext_RSS_RSS&cid=1123495333346_structured.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_ynet_co_il_Integration_StoryRss3254_xml.xml
+%ProgramFiles%\Israel_Radio\rss\http___www_ynet_co_il_Integration_StoryRss3254_xml_structured.xml
+%ProgramFiles%\Israel_Radio\tbIsra.dll
+%ProgramFiles%\Israel_Radio\toolbar.cfg
+%ProgramFiles%\Israel_Radio\UNWISE.EXE
+
+Notes:
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+%UserProfile% is a variable that refers to the current user's profile folder. By default, this is C:\Documents and Settings\[CURRENT USER] (Windows NT/2000/XP).
+
+Creates the following registry subkeys:
+
+Adds the following clean registry subkeys:
+
+Note: These subkeys may also be associated with legitimate software.
+
+Adds the values:
+
+to the registry subkey:
+
+Adds the values:
+
+to the registry subkey:
+
+Adds the values:
+
+to the registry subkey:
+
+HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar
+
+Adds the value:
+
+"IE Menu Extension toolbar" = "rundll32.exe "%ProgramFiles%\IEMenuExtension\tbextn.dll" DllShowTB"
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+so that Trackware.IEMenuExt runs every time Windows starts.
+
+Monitors activity and reports URLs visited to predetermined Web sites.
+
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        15 - Trackware.Marketdart
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+
+When Trackware.Marketdart is executed, it performs the following actions:
+
+Creates the following files:
+
+%Program Files%\md\md.exe
+
+Adds the value:
+
+"MD IE Plugin"="%ProgramFiles%\MD\md.exe"
+
+to the registry key:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+so that the Trackware runs every time Windows starts.
+
+Modifies the values:
+
+in the registry key:
+
+Modifies the values:
+
+in the registry key:
+
+Modifies the values:
+
+in the registry key:
+
+Modifies the value:
+
+in the registry key:
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        16 - Trackware.MegaSearch
+------------------------------------------------------------------------------
+File Names:
+megasear.dll,megaSearchBarSetup.exe,xpbarre.dll
+Systems Affected:
+Windows
+
+When Trackware.MegaSearch is executed, it performs the following actions:
+Creates the following files:
+
+%Temp%\MegasearchBarSetup.exe
+%Windir%\Downloaded Program Files\megasear.dll
+%ProgramFiles%\MEGASEAR TOOLBAR\Uninstall.exe
+%ProgramFiles%\MEGASEAR TOOLBAR\Cache\*.bmp
+%ProgramFiles%\XPBARRE Toolbar\Cache\*.bmp
+%ProgramFiles%\XPBARRE Toolbar\Cache\ErrorLog.txt
+%ProgramFiles%\XPBARRE Toolbar\Cache\xpbarretb0300.cfg
+
+Notes:
+%Temp% is a variable that refers to the Windows temporary folder. By default, this is C:\Windows\TEMP (Windows 95/98/Me/XP) or C:\WINNT\Temp (Windows NT/2000).
+%Windir% is a variable that refers to the Windows installation folder. By default, this is C:\Windows (Windows 95/98/Me/XP)or C:\Winnt (Windows NT/2000).
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Creates the following registry subkeys:
+
+Adds the values:
+
+to the registry subkey:
+
+Adds the values:
+
+to the registry subkey:
+
+Adds the value:
+
+to the registry key
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        17 - Trackware.ProSearch
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+The program must be manually downloaded and installed.
+
+When the program is executed, it may create the following file:
+%CurrentFolder%\e404.dll
+
+Next, it creates the following registry subkeys:
+
+The program then tracks all search queries directed to the following search engines:
+Google
+Yahoo
+Msn
+
+
+It then sends the search keywords to the following location:
+prosearchsite.com
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        18 - Trackware.Rewardnet
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+When Trackware.Rewardnet is executed, it performs the following actions:
+Creates the following files:
+
+%ProgramFiles%\RewardNet\rnutil.dll
+%ProgramFiles%\RewardNetwork\update.cli
+%ProgramFiles%\RewardNetwork\update.exe
+%ProgramFiles%\WebGuide\Log.txt
+%ProgramFiles%\WebGuide\sqlite_wg.dll
+%ProgramFiles%\WebGuide\unins000.dat
+%ProgramFiles%\WebGuide\unins000.exe
+%ProgramFiles%\WebGuide\update.dat
+%ProgramFiles%\WebGuide\update.exe
+%ProgramFiles%\WebGuide\update.ico
+%ProgramFiles%\WebGuide\webguide.dll
+%ProgramFiles%\WebGuide\websv.dll
+%ProgramFiles%\WebGuide\wgcache.db
+%USERPROFILE%\Local Settings\Temporary Internet Files\ISgooddayi.exe
+%USERPROFILE%\Local Settings\Temp\WSLgooddayi.exe
+C:\WINDOWS\system32\server.log
+
+Creates the following registry subkeys:
+
+Adds the entries:
+
+to the registry subkey:
+
+Adds the entry:
+
+to the registry subkey:
+
+Adds the entry:
+
+to the registry subkey:
+
+Adds the entry:
+
+to the registry subkey:
+
+Adds the entries:
+
+to the registry subkey:
+
+Adds the entry:
+
+to the registry subkey:
+
+Tracks Internet activity including Web sites visited. This information is then sent to a remote site.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        19 - Trackware.SaferBrowse
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+Once the program is executed, it creates the following files:
+%ProgramFiles%\Common Files\Safer Technologies\LinkHandler\1.0.0.8\LinkHandler32.dll
+%ProgramFiles%\Common Files\Safer Technologies\LinkHandler\1.0.0.8\LinkHandler64.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\43.0.2337.124.manifest
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome_100_percent.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome_200_percent.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome_child.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome_elf.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\chrome_watcher.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\d3dcompiler_47.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\default_apps\external_extensions.json
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\default_local_storage\chrome-extension_jeoacafpbcihiomhlakheieifhpjdfeo_0.localstorage
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\default_local_storage\chrome-extension_jeoacafpbcihiomhlakheieifhpjdfeo_0.localstorage-journal
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\delegate_execute.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Extensions\external_extensions.json
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\ffmpegsumo.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\icudtl.dat
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Installer\chrmstp.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Installer\safer.7z
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Installer\setup.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\libegl.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\libexif.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\libglesv2.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\linkhandler32.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\linkhandler64.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\am.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ar.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\bg.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\bn.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ca.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\cs.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\da.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\de.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\el.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\en-GB.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\en-US.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\es-419.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\es.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\et.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\fa.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\fi.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\fil.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\fr.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\gu.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\he.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\hi.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\hr.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\hu.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\id.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\it.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ja.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\kn.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ko.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\lt.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\lv.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ml.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\mr.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ms.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\nb.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\nl.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\pl.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\pt-BR.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\pt-PT.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ro.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ru.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\sk.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\sl.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\sr.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\sv.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\sw.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\ta.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\te.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\th.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\tr.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\uk.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\vi.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\zh-CN.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\Locales\zh-TW.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\metro_driver.dll
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\nacl64.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\nacl_irt_x86_32.nexe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\nacl_irt_x86_64.nexe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\natives_blob.bin
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\resources.pak
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\saferbrowserprotector.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\secondarytile.png
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\snapshot_blob.bin
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\VisualElements\logo.png
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\VisualElements\smalllogo.png
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\43.0.2337.124\VisualElements\splash-620x300.png
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\debug.log
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\master_bookmarks.html
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\master_preferences
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\safer.exe
+%ProgramFiles%\Safer Technologies\Safer Browser\Application\VisualElementsManifest.xml
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\facebook.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\google.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\safer-browser.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\twitter.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\yahoo.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\Icons\youtube.ico
+%ProgramFiles%\Safer Technologies\Safer Browser\SaferBrowserUninstall.exe
+%ProgramFiles%\Safer Technologies\Safer Updater\SaferUpdater.exe
+%ProgramFiles%\Safer Technologies\Safer Updater\SaferUpdaterUninstall.exe
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdate.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_am.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ar.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_bg.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_bn.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ca.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_cs.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_da.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_de.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_el.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_en-GB.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_en.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_es-419.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_es.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_et.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_fa.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_fi.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_fil.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_fr.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_gu.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_hi.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_hr.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_hu.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_id.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_is.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_it.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_iw.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ja.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_kn.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ko.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_lt.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_lv.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ml.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_mr.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ms.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_nl.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_no.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_pl.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_pt-BR.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_pt-PT.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ro.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ru.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_sk.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_sl.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_sr.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_sv.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_sw.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ta.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_te.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_th.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_tr.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_uk.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_ur.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_vi.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_zh-CN.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\goopdateres_zh-TW.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\npSaferUpdate3.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\psmachine.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\psuser.dll
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\SaferCrashHandler.exe
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\SaferUpdate.exe
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\SaferUpdateBroker.exe
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\SaferUpdateHelper.msi
+%ProgramFiles%\Safer Technologies\Update\1.3.23.33\SaferUpdateOnDemand.exe
+%ProgramFiles%\Safer Technologies\Update\Download\{8A69D345-D564-463C-AFF1-A69D9E530F96}\43.0.2337.124\saferinstaller.exe
+%ProgramFiles%\Safer Technologies\Update\Install\{57DCDC76-D1B0-4ACD-A95B-120ADBFB0B85}\saferinstaller.exe
+%ProgramFiles%\Safer Technologies\Update\SaferUpdate.exe
+%AllUsersProfile%\Public\Desktop\Facebook.lnk
+%AllUsersProfile%\Public\Desktop\Google.lnk
+%AllUsersProfile%\Public\Desktop\Safer Browser.lnk
+%AllUsersProfile%\Public\Desktop\Twitter.lnk
+%AllUsersProfile%\Public\Desktop\Yahoo!.lnk
+%AllUsersProfile%\Public\Desktop\YouTube.lnk
+
+The program then creates the following registry entries:
+
+The program is a web browser that claims to offer a safer browsing experience.
+
+The program monitors and records web surfing activity carried out using the browser and sends the gathered information
+to a remote server. It may also gather additional information from the computer.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        20 - Trackware.SafeScreen
+------------------------------------------------------------------------------
+File Names:
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\BlurDLL.dll %ProgramFiles%\PixAlert\PixAlert Safe
+Systems Affected:
+Windows
+
+When Trackware.SafeScreen is executed, it performs the following actions:
+Creates the following files:
+
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ActivateOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ActivateOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ActivityOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ActivityOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\blocker.bmp
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\BlurDLL.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\cleanup.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\DisableOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\DisableOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\endlicence.mtl
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ExitOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ExitOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\gdiout\config.ini
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\gdiout\endlicence.mtl
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\gdiout\logfile.mtl
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\gdiout\UserLog.mtl
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\gdiplus.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\HelpOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\HelpOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\highlight.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\html1.htm
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\ImFil.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\InstallBanner.JPG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Launcher.ico
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Launcher\Launcher.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Launcher\Launcher.ico
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Logger.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\LoggerConfig.dts
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\mfc71.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\mfc71u.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\MONITOR.ICO
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\msvcp71.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\msvcr71.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\pixctrl30.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\PixLog.dll
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\PixMonSvcInstaller.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\PixScreenAgent.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\PixUninstallPassword.exe
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\PoweredBySmall.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\RefreshOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\RefreshOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Register.htm
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SafeScFooter.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SafeScHeader.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\safescreen.chm
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SettingsOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SettingsOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\Splash.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\StoppedBy.JPG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\stylesheet.xsl
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SystemOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\SystemOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\UsersOff.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\UsersOn.PNG
+%ProgramFiles%\PixAlert\PixAlert SafeScreen 1.1\wlist\wlist.mtl
+%UserProfile%\Desktop\PixAlert SafeScreen.lnk
+%UserProfile%\Start Menu\Programs\PixAlert SafeScreen.lnk
+
+Note:
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files
+%UserProfile% is a variable that refers to the current user's profile folder. By default, this is C:\Documents and Settings\[CURRENT USER] (Windows NT/2000/XP).
+
+Creates the following registry subkeys:
+
+C:\Program Files\PixAlert\PixAlert SafeScreen 1.1\: ""
+C:\Program Files\PixAlert\: ""
+C:\Program Files\PixAlert\PixAlert SafeScreen 1.1\Launcher\: ""
+C:\Program Files\PixAlert\PixAlert SafeScreen 1.1\gdiout\: ""
+C:\Program Files\PixAlert\PixAlert SafeScreen 1.1\wlist\: ""
+C:\Documents and Settings\Administrator\Application Data\Microsoft\Installer\{5DF65BEC-57A9-4FD1-A584-BD3772503F86}\: ""
+
+Creates the following randomly named registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\[RANDOM CHARACTERS]
+
+Monitors user activity and stores any images that are viewed.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        21 - Trackware.SAHAgent
+------------------------------------------------------------------------------
+File Names:
+Bundle.exe
+Systems Affected:
+Windows
+
+When Trackware.SAHAgent is executed, it does the following:
+May create the following files:
+
+%Temp%\Bundle.exe.
+%System%\SahImages\gr_1reg.gif
+%System%\SahImages\gr_2shop.gif
+%System%\SahImages\gr_3cash.gif
+%System%\SahImages\gr_reg_header.gif
+%System%\SahImages\gr_sahs_logo.gif
+%System%\SahImages\submit_pop.gif
+%System%\SahHtml.exe
+%Windir%\Downloaded Program Files\WebInstaller.dll
+%Windir%\Downloaded Program Files\setup.inf
+%Windir%\SAHUninstall.exe
+%Temp%\bundletracking.asp
+%Windir%\Downloaded Program Files\v.dat
+%Windir%\Downloaded Program Files\vg.dat
+%System%\v.dat
+%System%\vg.dat
+%System%\vp.dat
+C:\SahAgent.log
+
+Notes:
+%Temp% is a variable that refers to the Windows temporary folder. By default, this is C:\Windows\TEMP (Windows 95/98/Me/XP) or C:\WINNT\Temp (Windows NT/2000).
+%System% is a variable that refers to the System folder. By default this is C:\Windows\System (Windows 95/98/Me), C:\Winnt\System32 (Windows NT/2000), or C:\Windows\System32 (Windows XP).
+%Windir% is a variable that refers to the Windows installation folder. By default, this is C:\Windows or C:\Winnt.
+
+May create several randomly named files which are 8-characters in length in the %Windir% and %System% folders with the following file extensions:
+
+.dat
+.dll
+.exe
+.html
+.ini.
+
+May create several files in the %Temp% folder with the following file extensions:
+
+.dll
+.exe
+
+as well as some or all of the following files:
+
+cdt1004.sah
+setup4002b.cab
+setup4021.cab
+
+May create the following registry subkey with several subkeys under this key which are specific to SAHAgent:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\VGroup
+
+Adds one of the values:
+
+"SAHBundle" = "%Temp%\bundle.exe run"
+"[RANDOM NAME]" = "%System%\[RANDOM NAME].exe"
+
+to the registry subkey:
+
+so that the Trackware runs when you start Windows.
+
+Note: [RANDOM NAME] is an 8-character long random sequence of letters and numerals.
+
+Adds one of the values:
+
+"DisplayName" = "Select Cashback"
+"DisplayName" = "ShoptAtHomeSelect Cash Back".
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\[RANDOM NAME]
+
+Creates the following registry subkeys:
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        22 - Trackware.SearchTerms
+------------------------------------------------------------------------------
+File Names:
+[RANDOM NAME].dll
+Systems Affected:
+Windows
+
+When Trackware.SearchTerms is executed, it performs the following actions:
+
+1. Creates the following registry subkeys:
+
+2. May connect to the following web-sites and transmit any search terms a user has entered in a search engine:
+
+[http://]imlooking.net
+[http://]esearchme.info
+[http://]66.230.138.44
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        23  - Trackware.SmartShopper
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+When Trackware.SmartShopper is installed, it does the following:
+
+Installs a Browser Helper Object in %ProgramFiles%\SmartShopper\Bin\[VERSION NUMBER]\SmrtShpr.dll
+
+Note: %ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Adds some or all of the following registry subkeys:
+
+Contacts some of the following Web sites:
+
+shopperreports.com
+dynamic.shopperreports.com
+cs.shopperreports.com
+code.shopperreports.com
+reports.shopperreports.com
+vip-farm2.shopperreports.com
+
+Sends information about search queries to the following URL:
+
+cs.shopperreports.com/SmartShopper/shopperreports.aspx
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        24 - Trackware.Spynova
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+When the program is executed, it creates the following files:
+%ProgramFiles%\Spynova Toolbar
+C:\Documents and Settings\All Users\Start Menu\Programs\Spynova Toolbar
+
+
+Next, the program creates the following registry subkeys:
+HKEY_ALL_USERS\Software\Spynova Toolbar
+HKEY_CLASSES_ROOT\CLSID\{4897C259-537B-41B0-9FB7-205B163AC6A3}
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar\{4897C259-537B-41B0-9FB7-205B163AC6A3}
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Spynova Toolbar_is1
+HKEY_ALL_USERS\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{4897C259-537B-41B0-9FB7-205B163AC6A3}
+
+The program then monitors the amount of time that Internet Explorer is being used and sends the information to the following locations:
+[http://]www.spynova.com/toolbar/toolbar_[REMOVED]
+[http://]www.spynova.com/toolbar/toolbar_[REMOVED]
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        25 - Trackware.WebExplorer
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+The risk is manually downloaded and installed by the user.
+
+When the risk is executed, it creates the following folders:
+C:\Documents and Settings\All Users\Application Data\WEL\
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\
+
+
+It then creates the following files:
+C:\Documents and Settings\All Users\Application Data\WEL\EML.exe
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\TestEmail.xml
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\WELAllDayWELWeb.xsl
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\WELbk.bmp
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\WELErrors.txt
+C:\Documents and Settings\All Users\Application Data\WEL\Reps\WELWeb.xsl
+C:\Documents and Settings\All Users\Application Data\WEL\WEL.chm
+C:\Documents and Settings\All Users\Application Data\WEL\WEL.dll
+C:\Documents and Settings\All Users\Application Data\WEL\WEL.exe
+C:\Documents and Settings\All Users\Application Data\WEL\WELUninstaller.exe
+C:\Documents and Settings\All Users\Application Data\WEL\xcacls.exe
+
+
+Next it creates the following registry entry so that it runs every time
+Windows starts:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\"WEL" = "C:\WINDOWS\system32\rundll32.exe C:\Documents and Settings\All Users\Application Data\WEL\WEL.dll"
+
+It creates the following registry subkey:
+HKEY_LOCAL_MACHINE\SOFTWARE\WEL
+
+The risk may then perform the following activities:
+Monitor and log Web sites visited.
+Create and send logs to a predefined email address.
+Run in stealth mode.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        26 - Trackware.WebGuardian
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+When Trackware.WebGuardian is executed, it performs the following actions:
+Creates the following files:
+
+%ProgramFiles%\ChildWebGuardian\ChildWebGuardian.exe
+%ProgramFiles%\ChildWebGuardian\ChildWebGuardian.chm
+%ProgramFiles%\ChildWebGuardian\cwgu.dll
+%ProgramFiles%\ChildWebGuardian\cwg_reg.exe
+%ProgramFiles%\ChildWebGuardian\h.gif
+%ProgramFiles%\ChildWebGuardian\Help1.html
+%ProgramFiles%\ChildWebGuardian\Help2.html
+%ProgramFiles%\ChildWebGuardian\Help3.html
+%ProgramFiles%\ChildWebGuardian\Help4.html
+%ProgramFiles%\ChildWebGuardian\Help5.html
+%ProgramFiles%\ChildWebGuardian\Help6.html
+%ProgramFiles%\ChildWebGuardian\Help7.html
+%ProgramFiles%\ChildWebGuardian\HelpStyles.css
+%ProgramFiles%\ChildWebGuardian\License.txt
+%ProgramFiles%\ChildWebGuardian\ReadMe.txt
+%ProgramFiles%\ChildWebGuardian\Demo\BlockedPage.gif
+%ProgramFiles%\ChildWebGuardian\Demo\ForbiddenFrameset.html
+%ProgramFiles%\ChildWebGuardian\Demo\ForbiddenLeftFrame.html
+%ProgramFiles%\ChildWebGuardian\Demo\ForbiddenMainFrame.html
+%ProgramFiles%\ChildWebGuardian\Demo\ForbiddenWordsDemo.html
+%ProgramFiles%\ChildWebGuardian\Demo\logo.gif
+%ProgramFiles%\ChildWebGuardian\Demo\MaxSpcAd.html
+%ProgramFiles%\ChildWebGuardian\Demo\PopupKillerDemo.html
+%ProgramFiles%\ChildWebGuardian\Language\readme.txt
+%System%\cwg.dll
+%UserProfile%\Desktop\ChildWebGuardian.lnk
+
+Notes:
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+%System% is a variable that refers to the System folder. By default this is C:\Windows\System (Windows 95/98/Me), C:\Winnt\System32 (Windows NT/2000), or C:\Windows\System32 (Windows XP).
+%UserProfile% is a variable that refers to the current user's profile folder. By default, this is C:\Documents and Settings\[CURRENT USER] (Windows NT/2000/XP).
+
+Creates the following registry entries:
+
+Adds the value:
+
+"%ProgramFiles%\ChildWebGuardian\ChildWebGuardian.exe" = "%ProgramFiles%\ChildWebGuardian\ChildWebGuardian.exe"
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\AuthorizedApplications\List
+
+Logs the URLs of pages visited and saves them to a log file.
+
+May send the log file to a predetermined email address.
+
+May restrict internet access to sites that contain words in the URL or Web page on a predetermined blacklist.
+
+May only allow access to Internet Explorer at specific times or on specific days.
+
+May block pop-up windows.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        27 - Trackware.Webhancer
+------------------------------------------------------------------------------
+Systems Affected:
+Windows
+
+When Trackware.Webhancer is installed, it performs the following actions:
+Runs as a process named whAgent.
+
+Sends information on Web sites visited and performance data to a remote server.
+
+Downloads and installs updates to itself.
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        28 - Trackware.WUPControl
+------------------------------------------------------------------------------
+File Names:
+wupc4.exe
+Systems Affected:
+Windows
+
+When Trackware.WUPControl is executed, it performs the following actions:
+Creates the following files:
+%ProgramFiles%\WUPC\license.txt
+%ProgramFiles%\WUPC\tutorial\1.gif
+%ProgramFiles%\WUPC\tutorial\1.html
+%ProgramFiles%\WUPC\tutorial\2.html
+%ProgramFiles%\WUPC\tutorial\3.gif
+%ProgramFiles%\WUPC\tutorial\3.html
+%ProgramFiles%\WUPC\tutorial\4.gif
+%ProgramFiles%\WUPC\tutorial\4.html
+%ProgramFiles%\WUPC\tutorial\5.gif
+%ProgramFiles%\WUPC\tutorial\5.html
+%ProgramFiles%\WUPC\tutorial\6.html
+%ProgramFiles%\WUPC\tutorial\css\main.css
+%ProgramFiles%\WUPC\tutorial\n1.gif
+%ProgramFiles%\WUPC\tutorial\n2.gif
+%ProgramFiles%\WUPC\uninstall.exe
+%ProgramFiles%\WUPC\wupc4.exe
+%UserProfile%\Start Menu\Programs\WUPC\Uninstall.lnk
+%UserProfile%\Start Menu\Programs\WUPC\WUPC.lnk
+%Windows%\wupc.ini
+
+Note:
+%UserProfile% is a variable that refers to the current user's profile folder. By default, this is C:\Documents and Settings\<Current User> (Windows NT/2000/XP).
+%ProgramFiles% is a variable that refers to the program files folder. By default, this is C:\Program Files.
+
+Creates the following registry subkeys:
+
+Adds the values:
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WUPC
+
+Adds the value:
+
+"InstallDir" = "C:\Program Files\WUPC"
+
+to the registry subkey:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\ALSEDI\PGuard
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                                 SUM UP FEATURES OF ALL SAMPLES (WITHOUT DUPLICATES)
 ------------------------------------------------------------------------------

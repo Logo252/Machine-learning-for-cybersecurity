@@ -25,6 +25,7 @@ Internal name MacroGen
 File version 1.00
 Description Word Macro virus constructor
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Generic Win/DOS Executable (32.8%)
 DOS Executable Generic (32.8%)
 Corel Photo Paint (0.6%)
 VXD Driver (0.5%)
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
@@ -63,6 +65,7 @@ templateDpvck
 code_page-535
 subjectDiesel Power Virus Construction Kit
 
+
 Features values:
 0, 1, 0, 0, 0, 1, 0, 1, 1
 ------------------------------------------------------------------------------
@@ -75,6 +78,7 @@ Internal name Vbswg095
 File version 0.95
 Description Vbs Worms Generator 0.95
 Comments Vbs Worms Generator
+
 
 Features values:
 0, 0, 1, 1, 0, 1, 1, 0, 1
@@ -90,6 +94,7 @@ File type unknown
 Magic literalDOS batch file text
 TrID	Unknown!
 
+
 Features values:
 1, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -104,6 +109,7 @@ last_saved2001-03-25 11:05:00
 revision_number2
 application_nameMicrosoft Word 8.0
 code_pageLatin I
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 0, 1, 1
@@ -125,6 +131,7 @@ security1
 code_pageLatin I
 subjectClass Object Virus Generator
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 0, 1, 1
 ------------------------------------------------------------------------------
@@ -134,6 +141,7 @@ Product SSTROJG
 Original name SSTROJG.EXE
 Internal name SSTROJG
 File version 3.00
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
@@ -150,6 +158,7 @@ Magic literalMS-DOS executable, MZ for MS-DOS
 TrID	Generic Win/DOS Executable (50.0%)
 DOS Executable Generic (49.9%)
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -159,6 +168,7 @@ Product 1.03
 Original name JSG1.03.exe
 Internal name JSG1.03
 File version 1.00
+
 
 Features values:
 1, 0, 0, 0, 0, 1, 1, 0, 1
@@ -178,6 +188,7 @@ DOS Executable Generic (32.8%)
 Corel Photo Paint (0.6%)
 VXD Driver (0.5%)
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -188,6 +199,7 @@ Original name lookout 1.00.exe
 Internal name lookout 1.00
 File version 1.00
 Comments http://areyoufearless.com
+
 
 Features values:
 1, 0, 0, 0, 0, 1, 1, 0, 1
@@ -201,6 +213,7 @@ Internal name VBS Worm Toolbox
 File version 1.00.0033
 Comments VBS Worm Toolbox Coded By: Triniti
 
+
 Features values:
 0, 0, 1, 1, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -211,6 +224,7 @@ Original name NGVCK.exe
 Internal name NGVCK
 File version 1.00
 Comments This program is for educational and research pourposes only ! The spreading of viruses is illegal !
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
@@ -223,6 +237,7 @@ Original name Vbswg.exe
 Internal name Vbswg
 File version 2.00
 Comments Vbswg 2 Beta
+
 
 Features values:
 0, 0, 0, 0, 1, 1, 1, 0, 1
@@ -245,6 +260,7 @@ OSVersion4.0
 ImageVersion0.0
 UninitializedDataSize73728
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -260,6 +276,7 @@ Magic literalMS-DOS executable, MZ for MS-DOS
 TrID	DOS Executable Borland C++ (76.4%)
 Generic Win/DOS Executable (11.7%)
 DOS Executable Generic (11.7%)
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
@@ -278,6 +295,7 @@ Generic Win/DOS Executable (11.7%)
 DOS Executable Generic (11.7%)
 Corel Photo Paint (0.2%)
 VXD Driver (0.1%)
+
 
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
@@ -299,6 +317,7 @@ DOS Executable Borland C++ (23.4%)
 Win32 Dynamic Link Library (generic) (11.8%)
 Win32 Executable (generic) (8.1%)
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
 ------------------------------------------------------------------------------
@@ -314,9 +333,10 @@ Magic literalMS-DOS executable, MZ for MS-DOS
 TrID	Generic Win/DOS Executable (50.0%)
 DOS Executable Generic (49.9%)
 
+
 Features values:
 0, 0, 0, 0, 0, 1, 1, 0, 1
-
+------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                                 SUM UP FEATURES OF ALL SAMPLES (WITHOUT DUPLICATES)
 ------------------------------------------------------------------------------
