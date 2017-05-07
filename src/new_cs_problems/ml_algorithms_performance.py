@@ -38,6 +38,8 @@ def run_script():
                   ]
 
     # ----------------------------- For constructor issue -----------------------------
+    print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
+
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
 
     # Instances
@@ -48,7 +50,6 @@ def run_script():
 
     number_of_instances = len(samples)
 
-    print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
@@ -58,6 +59,8 @@ def run_script():
                                  problem_title='constructor')
 
     # # ----------------------------- For trackware issue -----------------------------
+    print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
+
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
 
     # Instances
@@ -68,7 +71,6 @@ def run_script():
 
     number_of_instances = len(samples)
 
-    print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
