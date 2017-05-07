@@ -5,10 +5,9 @@
 @feature having_Vbs_or_VBS_word { 0, 1 }
 @feature having_Worm_or_Worms_word { 0, 1 }
 @feature having_Vbswg_word { 0, 1 }
-@feature file_type  { 0, 1 }
-@feature file_extension_exe  { 0, 1 }
-@feature file_extension_doc  { 0, 1 }
-@feature affected_os  { 0, 1 }
+@feature file_type_executable  { 0, 1 }
+@feature file_extension_exe_or_doc  { 0, 1 }
+@feature affected_windows_os  { 0, 1 }
 
 @class constructor { 0, 1}
 
@@ -29,17 +28,16 @@ Jei failo pavadinime yra žodis „Worm“ arba „Worms“, tuomet failas yra �
 •	having_Vbswg_word
 Jei failo pavadinime yra žodis „Vbswg“, tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju – palankiu failu.
 
-•	file_type
+•	file_type_executable
 Jei failo tipas yra vykdomasis, tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju – palankiu failu.
 
-•	file_extension_exe
-Jei failo prievardis yra (.exe), tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju – palankiu failu.
+•	file_extension_exe_or_doc
+Jei failo prievardis yra (.exe) arba (.doc), tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju – palankiu failu.
 
-•	file_extension_doc
-Jei failo prievardis yra (.doc), tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju – palankiu failu.
-
-•	affected_os
+•	affected_windows_os
 Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra įtariamas būti – konstruktoriumi, kitu atveju palankiu failu.
 
+
+
 •	class
-If class value is 0 - file is benign, otherwise if the value is 1 - file is constructor
+If class value is 0 - file is benign, otherwise (1) - file is constructor

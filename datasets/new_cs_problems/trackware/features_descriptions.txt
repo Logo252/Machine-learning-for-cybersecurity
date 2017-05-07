@@ -1,38 +1,50 @@
 @relation trackware
 
 @feature having_dot_symbol { 0, 1 }
-@feature register { 0, 1 }
-@feature file_type { 0, 1 }
-@feature affected_os { 0, 1 }
-@feature HDD { 0, 1 }
-@feature startup_key  { 0, 1 }
-@feature created_folder  { 0, 1 }
+@feature modified_register { 0, 1 }
+@feature file_type_executable { 0, 1 }
+@feature crowded_HDD { 0, 1 }
+@feature created_new_folder  { 0, 1 }
+@feature created_new_files  { 0, 1 }
+@feature modified_toolbar  { 0, 1 }
+@feature affected_windows_os  { 0, 1 }
+@feature runs_when_windows_os_starts  { 0, 1 }
+
 
 @class trackware { 0, 1}
 
 
-                                    7 FEATURES, 1 CLASS
+                                    9 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
 •	having_dot_symbol
 Jei failo pavadinime yra bent 1 taško simbolis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
-•	register
-Jei paleidus failą yra modifikuojamas registras, jo raktai bei reikšmės, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
+•	modified_register
+Jei failas modifikuoja registrą, jo raktus bei reikšmes, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
-•	file_type
+•	file_type_executable
 Jei failo tipas yra vykdomasis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
-•	affected_os
-Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
-
-•	HDD
+•	crowded_HDD
 Jei failas sukelia kietojo disko perpildymą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
-•	startup_key
-Jei failas sukuria naują paleisties raktą su vardu „Trackware“ ir reikšme (*.*), tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+•	created_new_folder
+Jei failas sukuria direktorijoje „%ProgramFiles%“ (Kintamasis, kuris nurodo programos failų katalogą, kuris pagal nutylėjimą yra C:\Program Files) ar „%UserProfile%“ (Kintamasis, kuris nurodo dabartinio vartotojo profilio katalogą, kuris pagal nutylėjimą yra „C:\Documents and Settings\[CURRENT USER]“) naują aplankalą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
-•	created_folder
-Jei failas sukuria direktorijoje „C:\Program Files\“ ar  „C:\ProgramData\“ aplankalą su vardu „Trackware“, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+•	created_new_files
+Jei failas sukuria direktorijoje „%ProgramFiles%“, ar „%UserProfile%“, ar „%Windir%“ (Kintamasis, kuris nurodo Windows instaliacijos katalogą, kuris pagal nutylėjimą yra C:\Windows), ar „%SystemDrive%“ (Kintamasis, kuris nurodo į Windows instaliacijos diską, kuris pagal nutylejimą yra C), ar „%Temp%“ (Kintamasis, kuris nurodo į Windows laikiną katalogą, kuris pagal nutylejimą yra C:\Windows\Temp), ar „%System%“ (Kintamasis, kuris nurodo į sistemos katalogą, kuris pagal nutylejimą yra C:\Windows\System, arba C:\Windows\System32)  naujus failus, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+
+•	modified_toolbar
+Jei failas modifikuoja įrankių juostą „Internet Explorer“ naršyklėje, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+
+•	affected_windows_os
+Jei failas paveikia „Microsoft Windows“ operacines sistemas, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+
+•	runs_when_windows_os_starts
+Jei failas pasileidžia kiekvieną kartą Windows operacinei sistemai startuojant, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
+
+
+
 
 •	class
-If class value is 0 - file is benign, otherwise if the value is 1 - file is trackware
+If class value is 0 - file is benign, otherwise (1) - file is trackware

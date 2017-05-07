@@ -1,0 +1,369 @@
+               CONSTRUCTOR DATA SAMPLES - from http://openmalware.org/
+------------------------------------------------------------------------------
+@relation constructor
+
+@feature having_dot_symbol { 0, 1 }
+@feature having_Constructor_word { 0, 1 }
+@feature having_Vbs_or_VBS_word { 0, 1 }
+@feature having_Worm_or_Worms_word { 0, 1 }
+@feature having_Vbswg_word { 0, 1 }
+@feature file_type_executable  { 0, 1 }
+@feature file_extension_exe_or_doc  { 0, 1 }
+@feature affected_windows_os  { 0, 1 }
+
+@class constructor { 0, 1}
+
+                                    8 FEATURES
+------------------------------------------------------------------------------
+                                        1 - Constructor.Win32.ZedMac.10
+------------------------------------------------------------------------------
+CopyrightCopyright © Zed/[rRlf], 2003.
+Product Zed's Word Macro Virus Constructor (ZWMVC)
+Original name MacroGen.exe
+Internal name MacroGen
+File version 1.00
+Description Word Macro virus constructor
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        2 - Constructor.DOS.BWG.403
+------------------------------------------------------------------------------
+MD5 80d2a0c3a582f927604215b94e8d9d63
+SHA1 c614baa7b80f3f9c7b323b24f0e74d5fd0da9d6e
+SHA256 66fbc0298d0dc0e4295da5db5766d367f4005987600c552cc4f00f5ba59bf0ce
+ssdeep1536:3Y+moagSPtvbstk07AeNsLdM8R/U5moYJ06A2aRf3n/+NsWffJEK+ATJRDql1:3Y+nSVQW07ARvtU5xO06Eu19fO1
+File size 115.7 KB ( 118492 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	Clipper DOS Executable (33.1%)
+Generic Win/DOS Executable (32.8%)
+DOS Executable Generic (32.8%)
+Corel Photo Paint (0.6%)
+VXD Driver (0.5%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        3 - Constructor.MSWord.Ctvck.c
+------------------------------------------------------------------------------
+last_authorNibbio
+creation_datetime1999-04-03 21:49:00
+authorXaRaBaS [DkpRJ]
+titleDiesel Power Virus Construction Kit
+page_count1
+last_saved1999-04-20 19:29:00
+edit_time480
+word_count25
+revision_number118
+application_nameMicrosoft Word 8.0
+character_count146
+templateDpvck
+code_page-535
+subjectDiesel Power Virus Construction Kit
+
+
+Features values:
+0, 1, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        4 - Constructor.VBS.Alamar.095
+------------------------------------------------------------------------------
+Copyright[K]Alamar - Virii Argentina
+Product Vbs Worms Generator
+Original name Vbswg095
+Internal name Vbswg095
+File version 0.95
+Description Vbs Worms Generator 0.95
+Comments Vbs Worms Generator
+
+
+Features values:
+0, 0, 1, 1, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        5 - Constructor.BAT.Restart.70
+------------------------------------------------------------------------------
+MD5 ac98c0eb4c8a2d96729be75cf28a661c
+SHA1 0f17a559751690a32e7537a718547eb3929ff489
+SHA256 74786d7b5e2b15897897a61a74cc2981133e6ddee6cd86330ab6649b8f6c142f
+ssdeep96:7meqRerbEbgewiYlqlzXABwAXkVtAbnn8APkGOA0PKGmAxLD:7qIbEbgewiY4d0w0kVty8CkGO1PKGmMf
+File size 4.1 KB ( 4246 bytes )
+File type unknown
+Magic literalDOS batch file text
+TrID	Unknown!
+
+
+Features values:
+1, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        6 - Constructor.MSWord.Bausatz
+------------------------------------------------------------------------------
+last_authorx
+creation_datetime2001-03-25 11:05:00
+templateNormal
+authorx
+page_count1
+last_saved2001-03-25 11:05:00
+revision_number2
+application_nameMicrosoft Word 8.0
+code_pageLatin I
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        7 - Constructor.MSWord.CPCK
+------------------------------------------------------------------------------
+last_authorJohn Wilkens
+creation_datetime1998-10-30 21:20:00
+revision_number123
+authorVicodinES
+page_count1
+commentsCPCK v1.0
+edit_time30360
+last_saved1998-11-14 23:36:00
+templateNormal.dot
+application_nameMicrosoft Word 8.0
+titleThe Class.Poppy Construction Kit
+security1
+code_pageLatin I
+subjectClass Object Virus Generator
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        8 - Constructor.Win32.SennaSpy.30
+------------------------------------------------------------------------------
+Product SSTROJG
+Original name SSTROJG.EXE
+Internal name SSTROJG
+File version 3.00
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        9 - Constructor.DOS.DVG
+------------------------------------------------------------------------------
+MD5 b63541f80b8dfaa26de3b711a3f1ce2b
+SHA1 4e39a104ce8e103e38ce4da1ffc717005e0fd803
+SHA256 83c806f63ae16d2a3a9eba5f7a027cc0949bf056afc1cbd4c43bda65d14f4989
+ssdeep768:CVwP5SGOyEe/NJ+BifbYZikue26u+9heG9y:aIS9feVJ1Uxj9y
+File size 41.1 KB ( 42080 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	Generic Win/DOS Executable (50.0%)
+DOS Executable Generic (49.9%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        10 - Constructor.Win32.JSGen.103
+------------------------------------------------------------------------------
+Product 1.03
+Original name JSG1.03.exe
+Internal name JSG1.03
+File version 1.00
+
+
+Features values:
+1, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        11 - Constructor.VBS.WSHVC
+------------------------------------------------------------------------------
+MD5 63888a348dc680b4459a3aad3f9b2e83
+SHA1 b044ef63960119bdb502821cb9260d1911650fab
+SHA256 37b32430f51e004aef808250c91f78b62dc8fad6133d4595d5db81a707c1561c
+ssdeep768:3qQyUAOTjRO8n5sZrN6fABK/r5NGKmZGJPf7I3apdq3Qt9ik+8lh9/WUqq1YE3Hp:aQykMUchXKzGKKGTIOdq389G8R/Uu
+File size 50.0 KB ( 51224 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	Clipper DOS Executable (33.1%)
+Generic Win/DOS Executable (32.8%)
+DOS Executable Generic (32.8%)
+Corel Photo Paint (0.6%)
+VXD Driver (0.5%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        12 - Constructor.Win32.GoboTools
+------------------------------------------------------------------------------
+Product Fearless LookOut Exploit Generator 1.00
+Original name lookout 1.00.exe
+Internal name lookout 1.00
+File version 1.00
+Comments http://areyoufearless.com
+
+
+Features values:
+1, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        13 - Constructor.VBS.VBSWT.100
+------------------------------------------------------------------------------
+opyrightCopyright 2001 Psyence
+Product Psyence - VBS Worm Toolbox
+Original name VBS Worm Toolbox.exe
+Internal name VBS Worm Toolbox
+File version 1.00.0033
+Comments VBS Worm Toolbox Coded By: Triniti
+
+
+Features values:
+0, 0, 1, 1, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        14 - Constructor.Win32.NGVCK.036
+------------------------------------------------------------------------------
+Product NGVCK
+Original name NGVCK.exe
+Internal name NGVCK
+File version 1.00
+Comments This program is for educational and research pourposes only ! The spreading of viruses is illegal !
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        15 - Constructor.VBS.Alamar.20.a
+------------------------------------------------------------------------------
+Copyright[K]
+Product Vbswg 2
+Original name Vbswg.exe
+Internal name Vbswg
+File version 2.00
+Comments Vbswg 2 Beta
+
+
+Features values:
+0, 0, 0, 0, 1, 1, 1, 1
+------------------------------------------------------------------------------
+                                        16 - Constructor.VBS.PSWVG.10
+------------------------------------------------------------------------------
+MIMETypeapplication/octet-stream
+SubsystemWindows GUI
+MachineTypeIntel 386 or later, and compatibles
+TimeStamp2002:03:05 17:41:06+01:00
+FileTypeWin32 EXE
+PETypePE32
+CodeSize32768
+LinkerVersion5.0
+FileTypeExtensionexe
+InitializedDataSize12288
+SubsystemVersion4.0
+EntryPoint0x1a290
+OSVersion4.0
+ImageVersion0.0
+UninitializedDataSize73728
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        17 - Constructor.DOS.TBTR
+------------------------------------------------------------------------------
+MD5 b5bde17000239a359a7fff5d0975cdd4
+SHA1 08f738d14be0a42bb4d2ca9a4eb3b08cf19d3bf4
+SHA256 af8c8ee983f2a1a940a65de4cafb54f32f02db52aafba95619a52d21662af9a7
+ssdeep768:862KdOstcQAm2ce237MijEzdeYMB61GiCKZtc7CN/2uvg363/BhZl1xw2S1UG4t8:rgUwKEzE61GiCKZ+uZT5CGG43CDw4F
+File size 77.7 KB ( 79575 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	DOS Executable Borland C++ (76.4%)
+Generic Win/DOS Executable (11.7%)
+DOS Executable Generic (11.7%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        18 - Constructor.DOS.DBCK
+------------------------------------------------------------------------------
+MD5 97328fafef4e8a39f350e0d567f96c6e
+SHA1 c15b052b46d4b1ae6e5fce948ebd0422a4a69ccd
+SHA256 a50dc808383b77bb192fbb5f0ad4209b64f77a58dc712f6a5bb821dfd61caf4b
+ssdeep768:LUkK5zZcNaPI3e3WZVnCLr/tleK1O2c6sSn9QZETO2m:LUkKZcWIO3MVnCLr/tIKYmGOTO2m
+File size 46.3 KB ( 47448 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	DOS Executable Borland C++ (76.1%)
+Generic Win/DOS Executable (11.7%)
+DOS Executable Generic (11.7%)
+Corel Photo Paint (0.2%)
+VXD Driver (0.1%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        19 - Constructor.VBS.ZSYkit
+------------------------------------------------------------------------------
+MD5 38b4e1b4f6a1402135fdcd19acf78c80
+SHA1 0a0c2a51a3a759a068c3a3f22bb1ff3b61513fc5
+SHA256 f6b63e11310a685455b1df6c5ddade77116cd3ab4b7f7b0abc8124b1e80397b4
+ssdeep12288:mMQ7qhox1VCPqurOnNYpZV5SdLFMSdNHAU:waYPur35SdJM
+authentihash  140e501d0060baddfbd578f5fced23697dd00ebfc7d7bfb679c7351be8df7028
+imphash  ba9c619e9c4aa5eb74f9d4e0867b0453
+File size 501.5 KB ( 513536 bytes )
+File type Win32 EXE
+Magic literalPE32 executable for MS Windows (GUI) Intel 80386 32-bit
+TrID	Win32 Executable Delphi generic (25.5%)
+Windows screen saver (23.6%)
+DOS Executable Borland C++ (23.4%)
+Win32 Dynamic Link Library (generic) (11.8%)
+Win32 Executable (generic) (8.1%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                        20 - Constructor.DOS.DNVG
+------------------------------------------------------------------------------
+MD5 0e305dec0835f0cbb1d0869c860eaac3
+SHA1 b9b8c6f809ed9ece26730e7e5e7974187983096f
+SHA256 b14d73add96c63de21bcf4721c31681eb8b4762d0b0e37f633676f137ff70652
+ssdeep384:qly0UWrCz7Nm5/0ZX5owf1GpD85ada+EeGejaOEh9Z6VXQfnHA2bcinYRlds:4UMC40Es1s85adlBpEhT6VenHAHiYR4
+File size 15.2 KB ( 15574 bytes )
+File type DOS EXE
+Magic literalMS-DOS executable, MZ for MS-DOS
+TrID	Generic Win/DOS Executable (50.0%)
+DOS Executable Generic (49.9%)
+
+
+Features values:
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                                SUM UP FEATURES OF ALL SAMPLES
+------------------------------------------------------------------------------
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 1, 0, 0, 0, 1, 1, 1
+0, 0, 1, 1, 0, 1, 1, 1
+1, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+1, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+1, 0, 0, 0, 0, 1, 1, 1
+0, 0, 1, 1, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 1, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1
+------------------------------------------------------------------------------
+                                SUM UP FEATURES OF ALL SAMPLES (WITHOUT DUPLICATES)
+------------------------------------------------------------------------------
+0, 1, 0, 0, 0, 1, 1, 1
+0, 0, 1, 1, 0, 1, 1, 1
+1, 0, 0, 0, 0, 1, 1, 1
+0, 0, 0, 0, 1, 1, 1, 1
+0, 0, 0, 0, 0, 1, 1, 1

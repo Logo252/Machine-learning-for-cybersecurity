@@ -41,19 +41,19 @@ def run_script():
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
 
     # Instances
-    instances = np.array(data_frame.drop(['class'], 1))
+    samples = np.array(data_frame.drop(['class'], 1))
 
     # Labels
     labels = np.array(data_frame['class'])
 
-    number_of_instances = len(instances)
+    number_of_instances = len(samples)
 
     print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
                                  seed=seed,
-                                 instances=instances,
+                                 samples=samples,
                                  labels=labels,
                                  problem_title='constructor')
 
@@ -61,32 +61,32 @@ def run_script():
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
 
     # Instances
-    instances = np.array(data_frame.drop(['class'], 1))
+    samples = np.array(data_frame.drop(['class'], 1))
 
     # Labels
     labels = np.array(data_frame['class'])
 
-    number_of_instances = len(instances)
+    number_of_instances = len(samples)
 
     print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
                                  number_of_folds=number_of_folds,
                                  seed=seed,
-                                 instances=instances,
+                                 samples=samples,
                                  labels=labels,
                                  problem_title='trackware')
 
 
 def evaluate_methods_performance(ml_methods, number_of_instances,
-                                 number_of_folds, seed, instances, labels, problem_title):
+                                 number_of_folds, seed, samples, labels, problem_title):
     """
     Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
     :param number_of_instances: number of instances
     :param number_of_folds: number of folds
     :param seed: seed
-    :param instances: instances
+    :param samples: samples
     :param labels: labels
     :param problem_title: title of the problem
     """
@@ -101,7 +101,7 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
                                         random_state=seed)
         # noinspection PyDeprecation
         cv_results = cross_validation.cross_val_score(method,
-                                                      instances,
+                                                      samples,
                                                       labels,
                                                       cv=k_fold,
                                                       scoring=scoring)

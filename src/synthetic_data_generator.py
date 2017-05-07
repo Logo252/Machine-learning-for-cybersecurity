@@ -1,22 +1,27 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
+import pandas as pd
+
 import random
 
 from sklearn.feature_selection import VarianceThreshold
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-from src.parameters import CONSTRUCTOR_SAMPLES
+from src.parameters import CONSTRUCTOR_SAMPLES_FILE
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-from src.parameters import TRACKWARE_SAMPLES
+from src.parameters import TRACKWARE_SAMPLES_FILE
 
 # Constants
-NO_OF_SAMPLES = 500  # Number of generated samples for each problem
+NO_OF_SAMPLES = 500  # Number of samples which will be generated for the problem
 
 # Possible values of the feature
 ZERO = 0
 ONE = 1
+
+CONSTRUCTOR_NON_REMOVED_FEATURE_NAMES = []
+TRACKWARE_NON_REMOVED_FEATURE_NAMES = []
 
 
 def run_script():
@@ -26,13 +31,15 @@ def run_script():
 
     # ----------------------- For constructor -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-    data_samples = CONSTRUCTOR_SAMPLES
+    data_samples_file = CONSTRUCTOR_SAMPLES_FILE
 
-    updated_data_samples = remove_unneeded_features(data_samples)
-    modified_samples = add_category_to_samples(1, updated_data_samples)
-    no_of_features = len(modified_samples) - 1
+    updated_data_samples = remove_unneeded_features(data_samples_file)
+    CONSTRUCTOR_NON_REMOVED_FEATURE_NAMES = updated_data_samples.columns
 
-    export_random_data(file_name, no_of_features, modified_samples)
+    # modified_samples = add_category_to_samples(1, updated_data_samples)
+    no_of_features = len(updated_data_samples) - 1
+
+    export_random_data(file_name, no_of_features, updated_data_samples)
     print("Generated random data has been exported to '{}' for constructor\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
@@ -40,13 +47,15 @@ def run_script():
 
     # ----------------------- For trackware -----------------------
     file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
-    data_samples = TRACKWARE_SAMPLES
+    data_samples_file = TRACKWARE_SAMPLES_FILE
 
-    updated_data_samples = remove_unneeded_features(data_samples)
-    modified_samples = add_category_to_samples(1, updated_data_samples)
-    no_of_features = len(modified_samples) - 1
+    updated_data_samples = remove_unneeded_features(data_samples_file)
+    TRACKWARE_NON_REMOVED_FEATURE_NAMES = updated_data_samples.columns
 
-    export_random_data(file_name, no_of_features, data_samples)
+    # modified_samples = add_category_to_samples(1, updated_data_samples)
+    no_of_features = len(updated_data_samples) - 1
+
+    export_random_data(file_name, no_of_features, updated_data_samples)
     print("Generated random data has been exported to '{}' for trackware\n".format(file_name))
 
     remove_duplicate_lines_in_file(file_name)
@@ -56,11 +65,33 @@ def run_script():
 def remove_unneeded_features(data_samples):
     """
     Removes features that have the same value in given data samples.
-    :param data_samples: given data samples
+    :param data_samples: given data samples file
     :return: updated data samples
     """
-    sel = VarianceThreshold()
-    return sel.fit_transform(data_samples)
+    data_frame = pd.read_csv(data_samples, sep=', ', engine='python')
+
+    # selector = VarianceThreshold()
+
+    columns = data_frame.columns
+    selector = VarianceThreshold()
+    selector.fit_transform(data_frame)
+    features = selector.get_support(indices=True)  # returns an array of integers corresponding to non removed features
+    feature_names = [columns[x] for x in data_frame[features] if x]
+
+    return pd.DataFrame(selector.fit_transform(data_frame), columns=feature_names)
+
+    # # Fit the Model
+    # selector.fit(data_frame)
+    # features = selector.get_support(indices=True)  # returns an array of integers corresponding to non removed features
+    # features = [column for column in data_frame[features]]  # array of all non removed features names
+    #
+    # # Format and Return
+    # selector = pd.DataFrame(selector.transform(data_frame))
+    # selector.columns = features
+
+    # print(selector)
+
+    # return selector.fit_transform(data_samples)
 
 
 def add_category_to_samples(category, samples):
