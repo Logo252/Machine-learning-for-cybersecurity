@@ -1,6 +1,8 @@
 having_dot_symbol, having_Constructor_word, having_Vbs_or_VBS_word, having_Worm_or_Worms_word, having_Vbswg_word, file_type_executable, file_extension_exe_or_doc, affected_windows_os
 0, 1, 0, 0, 0, 1, 1, 1
-0, 0, 1, 1, 0, 1, 1, 1
+0, 0, 1, 1, 0, 1, 0, 0
+1, 0, 0, 0, 0, 1, 0, 0
 1, 0, 0, 0, 0, 1, 1, 1
+0, 0, 1, 1, 0, 1, 1, 1
 0, 0, 0, 0, 1, 1, 1, 1
 0, 0, 0, 0, 0, 1, 1, 1

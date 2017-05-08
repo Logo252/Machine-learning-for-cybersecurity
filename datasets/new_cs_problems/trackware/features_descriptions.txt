@@ -1,6 +1,6 @@
 @relation trackware
 
-@feature having_dot_symbol { 0, 1 }
+@feature installed_BHO { 0, 1 }
 @feature modified_register { 0, 1 }
 @feature file_type_executable { 0, 1 }
 @feature crowded_HDD { 0, 1 }
@@ -16,8 +16,8 @@
 
                                     9 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
-•	having_dot_symbol
-Jei failo pavadinime yra bent 1 taško simbolis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
+•	installed_BHO
+Jei failas įdiegia naršyklės pagalbininko objektą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
 
 •	modified_register
 Jei failas modifikuoja registrą, jo raktus bei reikšmes, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
