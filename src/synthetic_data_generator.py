@@ -120,7 +120,7 @@ def export_samples_and_generated_random_data(file_name, no_of_features, data_fra
 
             # Finding out in which category new sample belongs to (comparing with given malicious data samples)
             for data_sample in samples:
-                for index in range(len(new_sample)):
+                for index in range(no_of_features):
                     if data_sample[index] == 1:
                         # If malicious sample's feature value (1) matches to new sample's feature value
                         # then set sample as malicious, otherwise as benign and break cycle
