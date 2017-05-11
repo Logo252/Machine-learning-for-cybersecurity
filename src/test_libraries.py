@@ -5,7 +5,7 @@ import pandas as pd
 
 print(np.__version__)
 
-L = list(range(10))
+# L = list(range(10))
 # print(L, end='\n')
 
 # print([str(c) for c in L], [type(item) for item in L], sep='\n')

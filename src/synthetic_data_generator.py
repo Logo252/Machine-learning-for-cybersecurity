@@ -14,7 +14,7 @@ from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 from src.parameters import TRACKWARE_SAMPLES_FILE
 
 # Constants
-NO_OF_SAMPLES = 200  # Number of samples which will be generated for the problem (duplicate samples will be removed)
+NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem (duplicate samples will be removed)
 
 # Possible values of the feature
 ZERO = 0
