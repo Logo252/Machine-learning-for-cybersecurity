@@ -33,7 +33,7 @@ def run_script():
     # data_frame = remove_unneeded_features(data_frame)
     no_of_features = len(data_frame.columns)
 
-    export_samples_and_generated_random_data(file_name, no_of_features, data_frame)
+    export_data(file_name, no_of_features, data_frame)
     print("Generated random data has been exported to\n'{}' for constructor\n".format(file_name))
 
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
@@ -46,7 +46,7 @@ def run_script():
     # data_frame = remove_unneeded_features(data_frame)
     no_of_features = len(data_frame.columns)
 
-    export_samples_and_generated_random_data(file_name, no_of_features, data_frame)
+    export_data(file_name, no_of_features, data_frame)
     print("Generated random data has been exported to\n'{}' for trackware\n".format(file_name))
 
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
@@ -65,9 +65,9 @@ def run_script():
 #     return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
 
 
-def export_samples_and_generated_random_data(file_name, no_of_features, data_frame):
+def export_data(file_name, no_of_features, data_frame):
     """
-    Exports generated random data to specified file.
+    Exports malware samples and generated random data to specified file.
     :param file_name: file name
     :param no_of_features: number of features
     :param data_frame: malicious data samples
@@ -116,24 +116,34 @@ def export_samples_and_generated_random_data(file_name, no_of_features, data_fra
                 new_sample_as_string = ', '.join(str(feature) for feature in new_sample)
                 txt_file.write(new_sample_as_string)
 
-            category = None
-
-            # Finding out in which category new sample belongs to (comparing with given malicious data samples)
-            for data_sample in samples:
-                for index in range(no_of_features):
-                    if data_sample[index] == 1:
-                        # If malicious sample's feature value (1) matches to new sample's feature value
-                        # then set sample as malicious, otherwise as benign and break cycle
-                        if data_sample[index] == new_sample[index]:
-                            category = '1'
-                        else:
-                            category = '0'
-                            break
-                if category == '1':  # If new sample's category is 1 then do not compare further to others data samples
-                    break
+            category = get_category(samples, no_of_features, new_sample)
 
             txt_file.write(', {}'.format(category))  # new category - 0 or 1
             txt_file.write('\n')  # new line
+
+
+def get_category(samples, no_of_features, new_sample):
+    """
+    Finds out in which category new sample belongs to comparing with given malicious data samples
+    :param samples: malicious data samples
+    :param no_of_features: number of features
+    :param new_sample: new generated sample
+    :return: category of the new generated sample
+    """
+    category = None
+    for data_sample in samples:
+        for index in range(no_of_features):
+            if data_sample[index] == 1:
+                # If malicious sample's feature value (1) matches to new sample's feature value
+                # then set sample as malicious, otherwise as benign and break cycle
+                if data_sample[index] == new_sample[index]:
+                    category = '1'
+                else:
+                    category = '0'
+                    break
+        if category == '1':  # If new sample's category is 1 then do not compare further to others data samples
+            break
+    return category
 
 
 # def sort_file_lines_by_category(file_name, no_of_features):
