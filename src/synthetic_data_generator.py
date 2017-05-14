@@ -5,7 +5,7 @@ import pandas as pd
 
 import random
 
-from sklearn.feature_selection import VarianceThreshold
+# from sklearn.feature_selection import VarianceThreshold
 
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
 from src.parameters import CONSTRUCTOR_SAMPLES_FILE
@@ -52,17 +52,17 @@ def run_script():
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
 
 
-def remove_unneeded_features(samples):
-    """
-    Removes features that have the same value in given data samples.
-    :param samples: data samples
-    :return: samples with updated features
-    """
-    selector = VarianceThreshold()
-    selector.fit_transform(samples)
-    features = selector.get_support(indices=True)  # returns an array of integers corresponding to non removed features
-    feature_names = [column for column in samples[features]]  # array of all non removed features names
-    return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
+# def remove_unneeded_features(samples):
+#     """
+#     Removes features that have the same value in given data samples.
+#     :param samples: data samples
+#     :return: samples with updated features
+#     """
+#     selector = VarianceThreshold()
+#     selector.fit_transform(samples)
+#     features = selector.get_support(indices=True)  # returns an array of integers corresponding to nonremoved features
+#     feature_names = [column for column in samples[features]]  # array of all non removed features names
+#     return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
 
 
 def export_samples_and_generated_random_data(file_name, no_of_features, data_frame):
@@ -93,7 +93,7 @@ def export_samples_and_generated_random_data(file_name, no_of_features, data_fra
         for sample in samples:
             sample_as_string = ', '.join(str(feature) for feature in sample)
             txt_file.write(sample_as_string)
-            txt_file.write(', 1')  # at the end add category - 1 (malware)
+            txt_file.write(', 1')  # category - 1 (malware) at the end of the line
             txt_file.write('\n')  # new line
 
         # Writing random samples to the file
@@ -107,7 +107,7 @@ def export_samples_and_generated_random_data(file_name, no_of_features, data_fra
                 feature_value = random.randint(ZERO, ONE)
                 new_sample.append(feature_value)
 
-            # If new sample has been already generated or is the same as real sample
+            # If the new sample has been already generated or he is the same as real sample
             # then skip everything and try to generate new sample
             if new_sample in new_samples or new_sample in samples:
                 continue
@@ -136,19 +136,19 @@ def export_samples_and_generated_random_data(file_name, no_of_features, data_fra
             txt_file.write('\n')  # new line
 
 
-def sort_file_lines_by_category(file_name, no_of_features):
-    """
-    Removes duplicate lines in the specified file.
-    :param file_name: file name
-    :param no_of_features: number of features
-    """
-    with open(file_name, 'r') as read:
-        lines = read.readlines()
-        sorted_lines = sorted(lines, key=lambda x: x.split()[no_of_features])
-
-    with open(file_name, 'w') as out:
-        for line in sorted_lines:
-            out.write(line)
+# def sort_file_lines_by_category(file_name, no_of_features):
+#     """
+#     Removes duplicate lines in the specified file.
+#     :param file_name: file name
+#     :param no_of_features: number of features
+#     """
+#     with open(file_name, 'r') as read:
+#         lines = read.readlines()
+#         sorted_lines = sorted(lines, key=lambda x: x.split()[no_of_features])
+#
+#     with open(file_name, 'w') as out:
+#         for line in sorted_lines:
+#             out.write(line)
 
 
 if __name__ == "__main__":
