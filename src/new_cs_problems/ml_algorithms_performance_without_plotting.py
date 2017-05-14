@@ -36,17 +36,11 @@ def run_script():
                   ('AdaBoost', AdaBoostClassifier()),
                   ]
 
-    # ----------------------------- For constructor issue -----------------------------
     print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
-
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
 
-    # Instances
     samples = np.array(data_frame.drop(['class'], 1))
-
-    # Labels
     labels = np.array(data_frame['class'])
-
     number_of_instances = len(samples)
 
     evaluate_methods_performance(ml_methods=ml_methods,
@@ -56,17 +50,11 @@ def run_script():
                                  samples=samples,
                                  labels=labels)
 
-    # # ----------------------------- For trackware issue -----------------------------
     print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
-
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
 
-    # Instances
     samples = np.array(data_frame.drop(['class'], 1))
-
-    # Labels
     labels = np.array(data_frame['class'])
-
     number_of_instances = len(samples)
 
     evaluate_methods_performance(ml_methods=ml_methods,
@@ -104,10 +92,8 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
 
         print("\t\t%s" % name)
 
-        # Mean accuracy and standard deviation accuracy
-        accuracy_message = "Mean accuracy (standard deviation accuracy): " \
-                           "%.3f (+/- %.3f)\n" % (
-                               cv_results.mean() * 100, cv_results.std() * 100)
+        accuracy_message = "Mean accuracy (standard deviation): " \
+                           "%.3f (+/- %.3f)\n" % (cv_results.mean() * 100, cv_results.std() * 100)
         print(accuracy_message)
 
 
