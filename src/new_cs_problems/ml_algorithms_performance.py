@@ -37,20 +37,20 @@ def run_script():
                   ('AdaBoost', AdaBoostClassifier()),
                   ]
 
-    print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
-    data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
-
-    samples = np.array(data_frame.drop(['class'], 1))
-    labels = np.array(data_frame['class'])
-    number_of_instances = len(samples)
-
-    evaluate_methods_performance(ml_methods=ml_methods,
-                                 number_of_instances=number_of_instances,
-                                 number_of_folds=number_of_folds,
-                                 seed=seed,
-                                 samples=samples,
-                                 labels=labels,
-                                 problem_title='constructor')
+    # print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
+    # data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
+    #
+    # samples = np.array(data_frame.drop(['class'], 1))
+    # labels = np.array(data_frame['class'])
+    # number_of_instances = len(samples)
+    #
+    # evaluate_methods_performance(ml_methods=ml_methods,
+    #                              number_of_instances=number_of_instances,
+    #                              number_of_folds=number_of_folds,
+    #                              seed=seed,
+    #                              samples=samples,
+    #                              labels=labels,
+    #                              problem_title='constructor')
 
     print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
     data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
@@ -105,9 +105,9 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
                            "%.3f (+/- %.3f)\n" % (cv_results.mean() * 100, cv_results.std() * 100)
         print(accuracy_message)
 
-    show_plot_of_algorithms_results(methods_names=methods_names,
-                                    results=results,
-                                    problem_title=problem_title)
+    # show_plot_of_algorithms_results(methods_names=methods_names,
+    #                                 results=results,
+    #                                 problem_title=problem_title)
 
 
 def show_plot_of_algorithms_results(methods_names, results, problem_title):

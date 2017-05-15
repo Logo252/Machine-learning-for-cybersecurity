@@ -3,7 +3,6 @@
 @feature installed_BHO { 0, 1 }
 @feature modified_register { 0, 1 }
 @feature file_type_executable { 0, 1 }
-@feature crowded_HDD { 0, 1 }
 @feature created_new_folder  { 0, 1 }
 @feature created_new_files  { 0, 1 }
 @feature modified_toolbar  { 0, 1 }
@@ -24,9 +23,6 @@ Jei failas modifikuoja registrą, jo raktus bei reikšmes, tuomet failas yra įt
 
 •	file_type_executable
 Jei failo tipas yra vykdomasis, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
-
-•	crowded_HDD
-Jei failas sukelia kietojo disko perpildymą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
 
 •	created_new_folder
 Jei failas sukuria direktorijoje „%ProgramFiles%“ (Kintamasis, kuris nurodo programos failų katalogą, kuris pagal nutylėjimą yra C:\Program Files) ar „%UserProfile%“ (Kintamasis, kuris nurodo dabartinio vartotojo profilio katalogą, kuris pagal nutylėjimą yra „C:\Documents and Settings\[CURRENT USER]“) naują aplankalą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju palankiu failu.
