@@ -1,4 +1,4 @@
-sklearn
+scipy
 matplotlib==2.0.2
 numpy==1.13.0rc1
 pandas==0.20.1
