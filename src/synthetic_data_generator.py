@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_selection import VarianceThreshold
 
-# Samples for Trackware issue
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 from src.parameters import TRACKWARE_SAMPLES_FILE
