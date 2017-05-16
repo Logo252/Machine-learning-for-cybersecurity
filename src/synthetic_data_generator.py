@@ -171,16 +171,16 @@ def export_samples(all_samples_file_name,
             generated_samples.write('\n')  # new line
 
 
-def get_category(samples, no_of_features, new_sample):
+def get_category(malicious_samples, no_of_features, new_sample):
     """
     Finds out in which category new sample belongs to comparing with given malicious data samples
-    :param samples: malicious data samples
+    :param malicious_samples: malicious data samples
     :param no_of_features: number of features
     :param new_sample: new generated sample
     :return: category of the new generated sample
     """
     category = None
-    for data_sample in samples:
+    for data_sample in malicious_samples:
         for index in range(no_of_features):
             if data_sample[index] == 1:
                 # If malicious sample's feature value (1) matches to new sample's feature value
