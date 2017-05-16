@@ -11,7 +11,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC  # svm - Support Vector Machines
 from sklearn.tree import DecisionTreeClassifier
 
-# from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 
 
