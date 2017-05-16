@@ -15,9 +15,6 @@ from sklearn.tree import DecisionTreeClassifier
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 
 
-# np.set_printoptions(threshold=np.inf)  # To show full numpy array for debugging
-
-
 def run_script():
     """
     Runs the script as the standalone program
@@ -36,14 +33,16 @@ def run_script():
                   ('AdaBoost', AdaBoostClassifier()),
                   ]
 
-    print(
-        "-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
-    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE, sep=', ',
+    print("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
+    print("-------------- FOR TRACKWARE --------------\n")
+    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE,
+                             sep=', ',
                              engine='python')
 
     samples = np.array(data_frame.drop(['class'], 1))
     labels = np.array(data_frame['class'])
     number_of_instances = len(samples)
+    problem_title = 'trackware'
 
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
@@ -51,22 +50,7 @@ def run_script():
                                  seed=seed,
                                  samples=samples,
                                  labels=labels,
-                                 problem_title='trackware')
-
-    # print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
-    # data_frame = pd.read_csv(ALL_SAMPLES_FOR_CONSTRUCTOR, sep=', ', engine='python')
-    #
-    # samples = np.array(data_frame.drop(['class'], 1))
-    # labels = np.array(data_frame['class'])
-    # number_of_instances = len(samples)
-    #
-    # evaluate_methods_performance(ml_methods=ml_methods,
-    #                              number_of_instances=number_of_instances,
-    #                              number_of_folds=number_of_folds,
-    #                              seed=seed,
-    #                              samples=samples,
-    #                              labels=labels,
-    #                              problem_title='constructor')
+                                 problem_title=problem_title)
 
 
 def evaluate_methods_performance(ml_methods, number_of_instances,
@@ -105,42 +89,39 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
 
         accuracy_message = "Mean accuracy (standard deviation): " \
                            "%.3f (+/- %.3f)\n" % (
-                           cv_results.mean() * 100, cv_results.std() * 100)
+                               cv_results.mean() * 100, cv_results.std() * 100)
         print(accuracy_message)
 
-        # show_plot_of_algorithms_results(methods_names=methods_names,
-        #                                 results=results,
-        #                                 problem_title=problem_title)
+    show_plot_of_algorithms_results(methods_names=methods_names,
+                                    results=results,
+                                    problem_title=problem_title)
 
 
 def show_plot_of_algorithms_results(methods_names, results, problem_title):
     """
-    Shows plot of machine learning algorithms results
-    :param methods_names: Machine learning methods names
-    :param results: Results got from applying methods for constructor
+    Shows plot of machine learning algorithms results.
+    :param methods_names: machine learning methods names
+    :param results: results got from applying methods for constructor
     :param problem_title: title of the problem
     """
     fig = plt.figure()
 
-    # Add a subplot to the new figure, 111 means "1x1 grid, first subplot"
-    ax = fig.add_subplot(111)
+    ax = fig.add_subplot(111)  # 111 means "1x1 grid, first subplot"
     plt.boxplot(results)
 
-    # x axis title
+    # x and y axis titles
     plt.xlabel('Machine learning algorithms')
-
-    # y axis title
     plt.ylabel('Accuracy')
 
     plt.title(
         'Machine learning algorithms applied for {}'.format(problem_title))
-    # Name of each box
+
+    # Set the Name of each box
     ax.set_xticklabels(methods_names)
 
     # Change font size of the text
     plt.rcParams.update({'font.size': 23})
 
-    # Show box plot
     plt.show()
 
 

@@ -6,15 +6,10 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_selection import VarianceThreshold
 
-# Trackware
+# Samples for Trackware issue
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 from src.parameters import TRACKWARE_SAMPLES_FILE
-
-# Constructor
-# from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
-# from src.parameters import CONSTRUCTOR_SAMPLES_FILE
-# from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
 
 # Constants
 NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem (duplicate samples will be removed)
@@ -23,44 +18,24 @@ NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem
 ZERO = 0
 ONE = 1
 
-# If MODE = 1, then unneeded features will be removed from the samples, otherwise no
-MODE = 0  # 0 or 1
+# If MODE = 2 -> Unneeded features will be removed from the samples
+# If MODE = 1 -> Created file lines will be sorted by category (from 0 to 1)
+# If MODE = 0 -> Running script without modifications
+MODE = 0
 
 
 def run_script():
     """
     Runs the script as the standalone program
     """
-    # print('----------------------- CONSTRUCTOR -----------------------')
-    # generated_samples_file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-    # all_samples_file_name = ALL_SAMPLES_FOR_CONSTRUCTOR
-    # data_samples_file = CONSTRUCTOR_SAMPLES_FILE
-    #
-    # data_frame = pd.read_csv(data_samples_file, sep=', ', engine='python')
-    #
-    # if MODE:
-    #     data_frame = remove_unneeded_features(data_frame)
-    # no_of_features = len(data_frame.columns)
-    #
-    # export_all_samples(all_samples_file_name, no_of_features,
-    #                    data_frame)
-    # print(
-    #     "All samples have been exported to\n'{}' for constructor\n".format(
-    #         all_samples_file_name))
-    # print(
-    #     "Generated samples have been exported to\n'{}' for trackware\n".format(
-    #         generated_samples_file_name))
-
-
-    # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
-
     print('----------------------- TRACKWARE -----------------------')
+    print('----------------------- MODE = %d -----------------------\n' % MODE)
     generated_samples_file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
     all_samples_file_name = ALL_SAMPLES_FOR_TRACKWARE
     data_samples_file = TRACKWARE_SAMPLES_FILE
 
     data_frame = pd.read_csv(data_samples_file, sep=', ', engine='python')
-    if MODE:
+    if MODE == 2:
         data_frame = remove_unneeded_features(data_frame)
     no_of_features = len(data_frame.columns)
 
@@ -68,16 +43,17 @@ def run_script():
                    generated_samples_file_name,
                    no_of_features,
                    data_frame)
-    print(
-        "All samples have been exported to\n'{}'\n".format(
-            all_samples_file_name))
+    print("All samples have been exported to\n'{}'\n".format(
+        all_samples_file_name))
 
-    print(
-        "Generated samples have been exported to\n'{}'\n".format(
-            generated_samples_file_name))
+    print("Generated samples have been exported to\n'{}'\n".format(
+        generated_samples_file_name))
 
-
-    # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
+    if MODE == 1:
+        sort_file_lines_by_category(all_samples_file_name,
+                                    no_of_features)
+        sort_file_lines_by_category(generated_samples_file_name,
+                                    no_of_features)
 
 
 def remove_unneeded_features(samples):
@@ -167,13 +143,15 @@ def export_samples(all_samples_file_name,
             all_samples.write(', {}'.format(category))  # new category - 0 or 1
             all_samples.write('\n')  # new line
 
-            generated_samples.write(', {}'.format(category))  # new category - 0 or 1
+            generated_samples.write(
+                ', {}'.format(category))  # new category - 0 or 1
             generated_samples.write('\n')  # new line
 
 
 def get_category(malicious_samples, no_of_features, new_sample):
     """
-    Finds out in which category new sample belongs to comparing with given malicious data samples
+    Finds out in which category new sample belongs to 
+    comparing with given malicious data samples.
     :param malicious_samples: malicious data samples
     :param no_of_features: number of features
     :param new_sample: new generated sample
@@ -195,19 +173,19 @@ def get_category(malicious_samples, no_of_features, new_sample):
     return category
 
 
-# def sort_file_lines_by_category(file_name, no_of_features):
-#     """
-#     Removes duplicate lines in the specified file.
-#     :param file_name: file name
-#     :param no_of_features: number of features
-#     """
-#     with open(file_name, 'r') as read:
-#         lines = read.readlines()
-#         sorted_lines = sorted(lines, key=lambda x: x.split()[no_of_features])
-#
-#     with open(file_name, 'w') as out:
-#         for line in sorted_lines:
-#             out.write(line)
+def sort_file_lines_by_category(file_name, no_of_features):
+    """
+    Sorts files by category from 0 to 1.
+    :param file_name: file name
+    :param no_of_features: number of features
+    """
+    with open(file_name, 'r') as read:
+        lines = read.readlines()
+        sorted_lines = sorted(lines, key=lambda x: x.split()[no_of_features])
+
+    with open(file_name, 'w') as out:
+        for line in sorted_lines:
+            out.write(line)
 
 
 if __name__ == "__main__":
