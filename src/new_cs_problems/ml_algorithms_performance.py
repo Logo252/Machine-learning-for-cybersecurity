@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
 
-import numpy as np
-# np.set_printoptions(threshold=np.inf)  # To show full numpy array for debugging
-
-import pandas as pd
 import matplotlib.pyplot as plt
-
+import numpy as np
+import pandas as pd
 from sklearn import cross_validation
-
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC  # svm - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC  # svm - Support Vector Machines
+from sklearn.tree import DecisionTreeClassifier
 
-from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
+# from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
+
+
+# np.set_printoptions(threshold=np.inf)  # To show full numpy array for debugging
 
 
 def run_script():
@@ -37,6 +36,23 @@ def run_script():
                   ('AdaBoost', AdaBoostClassifier()),
                   ]
 
+    print(
+        "-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
+    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE, sep=', ',
+                             engine='python')
+
+    samples = np.array(data_frame.drop(['class'], 1))
+    labels = np.array(data_frame['class'])
+    number_of_instances = len(samples)
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 samples=samples,
+                                 labels=labels,
+                                 problem_title='trackware')
+
     # print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
     # data_frame = pd.read_csv(ALL_SAMPLES_FOR_CONSTRUCTOR, sep=', ', engine='python')
     #
@@ -52,24 +68,10 @@ def run_script():
     #                              labels=labels,
     #                              problem_title='constructor')
 
-    print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
-    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE, sep=', ', engine='python')
-
-    samples = np.array(data_frame.drop(['class'], 1))
-    labels = np.array(data_frame['class'])
-    number_of_instances = len(samples)
-
-    evaluate_methods_performance(ml_methods=ml_methods,
-                                 number_of_instances=number_of_instances,
-                                 number_of_folds=number_of_folds,
-                                 seed=seed,
-                                 samples=samples,
-                                 labels=labels,
-                                 problem_title='trackware')
-
 
 def evaluate_methods_performance(ml_methods, number_of_instances,
-                                 number_of_folds, seed, samples, labels, problem_title):
+                                 number_of_folds, seed, samples, labels,
+                                 problem_title):
     """
     Evaluates machine learning methods for cs problem - constructor
     :param ml_methods: machine learning methods
@@ -102,12 +104,13 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
         print("\t\t%s" % name)
 
         accuracy_message = "Mean accuracy (standard deviation): " \
-                           "%.3f (+/- %.3f)\n" % (cv_results.mean() * 100, cv_results.std() * 100)
+                           "%.3f (+/- %.3f)\n" % (
+                           cv_results.mean() * 100, cv_results.std() * 100)
         print(accuracy_message)
 
-    # show_plot_of_algorithms_results(methods_names=methods_names,
-    #                                 results=results,
-    #                                 problem_title=problem_title)
+        # show_plot_of_algorithms_results(methods_names=methods_names,
+        #                                 results=results,
+        #                                 problem_title=problem_title)
 
 
 def show_plot_of_algorithms_results(methods_names, results, problem_title):
@@ -129,7 +132,8 @@ def show_plot_of_algorithms_results(methods_names, results, problem_title):
     # y axis title
     plt.ylabel('Accuracy')
 
-    plt.title('Machine learning algorithms applied for {}'.format(problem_title))
+    plt.title(
+        'Machine learning algorithms applied for {}'.format(problem_title))
     # Name of each box
     ax.set_xticklabels(methods_names)
 
