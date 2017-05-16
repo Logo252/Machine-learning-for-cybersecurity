@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys
 import unittest
-
-sys.path.append("..")
 
 from src import synthetic_data_generator
 
@@ -34,11 +31,11 @@ class TestGetCategory(unittest.TestCase):
         category = '1'
         self.assertEqual(category, response)
 
-    # def test_without_correct_arguments(self):
-    #     """
-    #     It should get the exception.
-    #     """
-    #     synthetic_data_generator.get_category(
-    #         INVALID_MALICIOUS_DATA_SAMPLES,
-    #         INVALID_NO_OF_FEATURES,
-    #         INVALID_NEW_SAMPLE)
+        # def test_without_correct_arguments(self):
+        #     """
+        #     It should get the exception.
+        #     """
+        #     synthetic_data_generator.get_category(
+        #         INVALID_MALICIOUS_DATA_SAMPLES,
+        #         INVALID_NO_OF_FEATURES,
+        #         INVALID_NEW_SAMPLE)
