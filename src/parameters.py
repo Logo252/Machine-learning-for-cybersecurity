@@ -12,8 +12,12 @@ TRAINING_DATA_FOR_PHISHING = os.path.join(dir_name(dir_name(__file__)), 'dataset
 
 # Constructor
 CONSTRUCTOR_SAMPLES_FILE = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'constructor_samples.txt')
+ALL_SAMPLES_FOR_CONSTRUCTOR = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'all_samples.txt')
+
 GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'constructor', 'generated_samples.txt')
 
 # Trackware
 TRACKWARE_SAMPLES_FILE = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'trackware_samples.txt')
+ALL_SAMPLES_FOR_TRACKWARE = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'all_samples.txt')
+
 GENERATED_SAMPLES_FILE_FOR_TRACKWARE = os.path.join(dir_name(dir_name(__file__)), 'datasets', 'new_cs_problems', 'trackware', 'generated_samples.txt')

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
-import numpy as np
-import pandas as pd
-
 import random
 
-# from sklearn.feature_selection import VarianceThreshold
+import numpy as np
+import pandas as pd
+from sklearn.feature_selection import VarianceThreshold
 
-from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
+from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
+from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 from src.parameters import CONSTRUCTOR_SAMPLES_FILE
-
-from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 from src.parameters import TRACKWARE_SAMPLES_FILE
+# from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
+# from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 
 # Constants
 NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem (duplicate samples will be removed)
@@ -20,59 +20,76 @@ NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem
 ZERO = 0
 ONE = 1
 
+# If MODE = 1, then unneeded features will be removed from the samples, otherwise no
+MODE = 0  # 0 or 1
+
 
 def run_script():
     """
     Runs the script as the standalone program
     """
     print('----------------------- CONSTRUCTOR -----------------------')
-    file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
+    # generated_file_name = GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
+    all_samples_file_name = ALL_SAMPLES_FOR_CONSTRUCTOR
     data_samples_file = CONSTRUCTOR_SAMPLES_FILE
 
     data_frame = pd.read_csv(data_samples_file, sep=', ', engine='python')
-    # data_frame = remove_unneeded_features(data_frame)
+
+    if MODE:
+        data_frame = remove_unneeded_features(data_frame)
     no_of_features = len(data_frame.columns)
 
-    export_data(file_name, no_of_features, data_frame)
-    print("Generated random data has been exported to\n'{}' for constructor\n".format(file_name))
+    export_all_samples(all_samples_file_name, no_of_features,
+                       data_frame)
+    print(
+        "Generated random data has been exported to\n'{}' for constructor\n".format(
+            all_samples_file_name))
 
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
 
     print('----------------------- TRACKWARE -----------------------')
-    file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
+    # generated_file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
+    all_samples_file_name = ALL_SAMPLES_FOR_TRACKWARE
     data_samples_file = TRACKWARE_SAMPLES_FILE
 
     data_frame = pd.read_csv(data_samples_file, sep=', ', engine='python')
-    # data_frame = remove_unneeded_features(data_frame)
+    if MODE:
+        data_frame = remove_unneeded_features(data_frame)
     no_of_features = len(data_frame.columns)
 
-    export_data(file_name, no_of_features, data_frame)
-    print("Generated random data has been exported to\n'{}' for trackware\n".format(file_name))
+    export_all_samples(all_samples_file_name, no_of_features,
+                       data_frame)
+    print(
+        "Generated random data has been exported to\n'{}' for trackware\n".format(
+            all_samples_file_name))
 
     # sort_file_lines_by_category(file_name, no_of_features)  # from 0 (benign) to 1 (malware)
 
 
-# def remove_unneeded_features(samples):
-#     """
-#     Removes features that have the same value in given data samples.
-#     :param samples: data samples
-#     :return: samples with updated features
-#     """
-#     selector = VarianceThreshold()
-#     selector.fit_transform(samples)
-#     features = selector.get_support(indices=True)  # returns an array of integers corresponding to nonremoved features
-#     feature_names = [column for column in samples[features]]  # array of all non removed features names
-#     return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
-
-
-def export_data(file_name, no_of_features, data_frame):
+def remove_unneeded_features(samples):
     """
-    Exports malware samples and generated random data to specified file.
-    :param file_name: file name
+    Removes features that have the same value in given data samples.
+    :param samples: data samples
+    :return: samples with updated features
+    """
+    selector = VarianceThreshold()
+    selector.fit_transform(samples)
+    features = selector.get_support(
+        indices=True)  # returns an array of integers corresponding to nonremoved features
+    feature_names = [column for column in samples[
+        features]]  # array of all non removed features names
+    return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
+
+
+def export_all_samples(all_samples_file_name, no_of_features,
+                       data_frame):
+    """
+    Exports malware samples and generated samples to specified file.
+    :param all_samples_file_name: all samples file name
     :param no_of_features: number of features
     :param data_frame: malicious data samples
     """
-    with open(file_name, 'w') as txt_file:
+    with open(all_samples_file_name, 'w') as txt_file:
 
         # Writing features to the file and to console
         features = list(data_frame)
@@ -87,16 +104,18 @@ def export_data(file_name, no_of_features, data_frame):
         samples = samples.tolist()
 
         # If all features are 0 in sample then remove it from samples list
-        samples = [sample for sample in samples if not all(feature == 0 for feature in sample)]
+        samples = [sample for sample in samples if
+                   not all(feature == 0 for feature in sample)]
 
         # Writing samples to the file
         for sample in samples:
             sample_as_string = ', '.join(str(feature) for feature in sample)
             txt_file.write(sample_as_string)
-            txt_file.write(', 1')  # category - 1 (malware) at the end of the line
+            txt_file.write(
+                ', 1')  # category - 1 (malware) at the end of the line
             txt_file.write('\n')  # new line
 
-        # Writing random samples to the file
+        # Writing generated random samples to the file
         i = 1
         new_samples = []
         while i <= NO_OF_SAMPLES:
@@ -113,7 +132,8 @@ def export_data(file_name, no_of_features, data_frame):
                 continue
             else:
                 new_samples.append(new_sample)
-                new_sample_as_string = ', '.join(str(feature) for feature in new_sample)
+                new_sample_as_string = ', '.join(
+                    str(feature) for feature in new_sample)
                 txt_file.write(new_sample_as_string)
 
             category = get_category(samples, no_of_features, new_sample)
