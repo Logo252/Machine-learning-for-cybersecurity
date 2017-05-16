@@ -15,8 +15,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC  # svm - Support Vector Machines
 from sklearn.ensemble import AdaBoostClassifier
 
-from src.parameters import GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR
-from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
+from src.parameters import ALL_SAMPLES_FOR_CONSTRUCTOR
+from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 
 
 def run_script():
@@ -38,7 +38,7 @@ def run_script():
                   ]
 
     # print("-------------- ML ALGORITHMS PERFORMANCE FOR CONSTRUCTOR ISSUE --------------\n")
-    # data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_CONSTRUCTOR, sep=', ', engine='python')
+    # data_frame = pd.read_csv(ALL_SAMPLES_FOR_CONSTRUCTOR, sep=', ', engine='python')
     #
     # samples = np.array(data_frame.drop(['class'], 1))
     # labels = np.array(data_frame['class'])
@@ -53,7 +53,7 @@ def run_script():
     #                              problem_title='constructor')
 
     print("-------------- ML ALGORITHMS PERFORMANCE FOR TRACKWARE ISSUE --------------\n")
-    data_frame = pd.read_csv(GENERATED_SAMPLES_FILE_FOR_TRACKWARE, sep=', ', engine='python')
+    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE, sep=', ', engine='python')
 
     samples = np.array(data_frame.drop(['class'], 1))
     labels = np.array(data_frame['class'])
