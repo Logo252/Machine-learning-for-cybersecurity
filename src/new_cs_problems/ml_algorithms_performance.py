@@ -8,8 +8,10 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC  # svm - Support Vector Machines
+from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
 
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 
@@ -30,6 +32,9 @@ def run_script():
                   ('Logistic regression', LogisticRegression()),
                   ('SVM', SVC()),
                   ('AdaBoost', AdaBoostClassifier()),
+                  ('Random forest', RandomForestClassifier()),
+                  # added `max_iter=750` to NN to suppress a warning
+                  ('Neural networks', MLPClassifier(max_iter=750))
                   ]
 
     print("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
