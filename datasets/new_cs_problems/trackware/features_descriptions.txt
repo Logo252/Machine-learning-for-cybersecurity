@@ -13,7 +13,7 @@
 @class trackware { 0, 1}
 
 
-                                    9 FEATURES, 1 CLASS
+                                    8 FEATURES, 1 CLASS
 ------------------------------------------------------------------------------
 •	installed_BHO
 Jei failas įdiegia naršyklės pagalbininko objektą, tuomet failas yra įtariamas būti – sekančia programa, kitu atveju – palankiu failu.
