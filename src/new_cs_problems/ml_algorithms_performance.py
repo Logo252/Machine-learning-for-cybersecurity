@@ -26,15 +26,15 @@ def run_script():
     # Seed ensures we have the same sequence of random numbers
     seed = 7
 
-    ml_methods = [('K-Nearest neighbors', KNeighborsClassifier()),
+    ml_methods = [('K-NN', KNeighborsClassifier()),
                   ('Decision tree', DecisionTreeClassifier()),
                   ('Naive Bayes', GaussianNB()),
                   ('Logistic regression', LogisticRegression()),
                   ('SVM', SVC()),
                   ('AdaBoost', AdaBoostClassifier()),
                   ('Random forest', RandomForestClassifier()),
-                  # added `max_iter=750` to NN to suppress a warning
-                  ('Neural networks', MLPClassifier(max_iter=750))
+                  # added `max_iter=750` to NN (Neural Networks) to suppress a warning
+                  ('NN', MLPClassifier(max_iter=750))
                   ]
 
     print("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
