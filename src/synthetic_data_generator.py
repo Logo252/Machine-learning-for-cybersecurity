@@ -95,8 +95,6 @@ def export_samples(all_samples_file_name,
         generated_samples.write(', class')
         generated_samples.write('\n')  # new line
 
-        # print("Features names:\n{}\n".format(features_as_string))
-
         # Samples from data frame as numpy array (without header)
         malicious_samples = np.array(data_frame.as_matrix())
         malicious_samples = malicious_samples.tolist()
