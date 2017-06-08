@@ -134,8 +134,8 @@ def export_samples(all_samples_file_name,
                 all_samples.write(new_sample_as_string)
                 generated_samples.write(new_sample_as_string)
 
-            category = get_category(malicious_samples, no_of_features,
-                                    new_sample)
+            category = _get_category(malicious_samples, no_of_features,
+                                     new_sample)
 
             all_samples.write(', {}'.format(category))  # new category - 0 or 1
             all_samples.write('\n')  # new line
@@ -145,7 +145,7 @@ def export_samples(all_samples_file_name,
             generated_samples.write('\n')  # new line
 
 
-def get_category(malicious_samples, no_of_features, new_sample):
+def _get_category(malicious_samples, no_of_features, new_sample):
     """
     Finds out in which category new sample belongs to 
     comparing with given malicious data samples.
