@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import logging
 import random
 
 import numpy as np
@@ -10,8 +11,14 @@ from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
 from src.parameters import GENERATED_SAMPLES_FILE_FOR_TRACKWARE
 from src.parameters import TRACKWARE_SAMPLES_FILE
 
-# Constants
-NO_OF_SAMPLES = 100  # Number of samples which will be generated for the problem (duplicate samples will be removed)
+# Logging
+logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.INFO)  # logging.DEBUG, logging.WARNING
+
+# Number of samples which will be generated for
+# the problem (duplicate samples will be removed)
+NO_OF_SAMPLES = 100
 
 # Possible values of the feature
 ZERO = 0
@@ -27,8 +34,8 @@ def run_script():
     """
     Runs the script as the standalone program
     """
-    print('----------------------- TRACKWARE -----------------------')
-    print('----------------------- MODE = %d -----------------------\n' % MODE)
+    LOGGER.info("----------------------- TRACKWARE -----------------------")
+    LOGGER.info("----------------------- MODE = %d -----------------------\n" % MODE)
     generated_samples_file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
     all_samples_file_name = ALL_SAMPLES_FOR_TRACKWARE
     data_samples_file = TRACKWARE_SAMPLES_FILE
@@ -42,10 +49,10 @@ def run_script():
                    generated_samples_file_name,
                    no_of_features,
                    data_frame)
-    print("All samples have been exported to\n'{}'\n".format(
+    LOGGER.info("All samples have been exported to\n'%s'\n" % (
         all_samples_file_name))
 
-    print("Generated samples have been exported to\n'{}'\n".format(
+    LOGGER.info("Generated samples have been exported to\n'%s'\n" % (
         generated_samples_file_name))
 
     if MODE == 1:

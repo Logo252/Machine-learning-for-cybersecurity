@@ -1,19 +1,25 @@
 # -*- coding: utf-8 -*-
+import logging
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn import cross_validation
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neural_network import MLPClassifier
 
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
+
+# Logging
+logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.INFO)  # logging.DEBUG, logging.WARNING
 
 
 def run_script():
@@ -37,8 +43,8 @@ def run_script():
                   ('NN', MLPClassifier(max_iter=750))
                   ]
 
-    print("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
-    print("-------------- FOR TRACKWARE --------------\n")
+    LOGGER.info("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
+    LOGGER.info("-------------- FOR TRACKWARE --------------\n")
     data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE,
                              sep=', ',
                              engine='python')
@@ -89,12 +95,12 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
         results.append(cv_results)
         methods_names.append(name)
 
-        print("\t\t%s" % name)
+        LOGGER.info("\t\t%s" % name)
 
         accuracy_message = "Mean accuracy (standard deviation): " \
                            "%.3f (+/- %.3f)\n" % (
                                cv_results.mean() * 100, cv_results.std() * 100)
-        print(accuracy_message)
+        LOGGER.info(accuracy_message)
 
     show_plot_of_algorithms_results(methods_names=methods_names,
                                     results=results,
