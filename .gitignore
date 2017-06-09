@@ -1,5 +1,48 @@
-# Pycharm project file
-.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Cache files and folders
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+_pycache_
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
 .cache
+nosetests.xml
+
+# Translations
+*.mo
+
+# Vim
+*.sw[op]
+
+# Eclipse
+.project
+.pydevproject
+
+# Subversion
+.svn
+
+# PyCharm
+.idea
