@@ -112,7 +112,7 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
         results.append(cv_results)
         methods_names.append(name)
 
-        LOGGER.info("\t\t%s" % name)
+        LOGGER.info("\t\t%s", name)
 
         accuracy_message = "Mean accuracy (standard deviation): " \
                            "%.3f%% (+/- %.3f%%)\n" % (

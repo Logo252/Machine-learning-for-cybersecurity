@@ -38,7 +38,7 @@ def run_script():
     """
     LOGGER.info("----------------------- TRACKWARE -----------------------")
     LOGGER.info(
-        "----------------------- MODE = %d -----------------------\n" % MODE)
+        "----------------------- MODE = %d -----------------------\n", MODE)
     generated_samples_file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
     all_samples_file_name = ALL_SAMPLES_FOR_TRACKWARE
     data_samples_file = TRACKWARE_SAMPLES_FILE
@@ -52,11 +52,11 @@ def run_script():
                    generated_samples_file_name,
                    no_of_features,
                    data_frame)
-    LOGGER.info("All samples have been exported to\n'%s'\n" % (
-        all_samples_file_name))
+    LOGGER.info("All samples have been exported to\n'%s'\n",
+                all_samples_file_name)
 
-    LOGGER.info("Generated samples have been exported to\n'%s'\n" % (
-        generated_samples_file_name))
+    LOGGER.info("Generated samples have been exported to\n'%s'\n",
+                generated_samples_file_name)
 
     if MODE == 1:
         sort_file_lines_by_category(all_samples_file_name,
@@ -162,7 +162,7 @@ def export_samples(all_samples_file_name,
 
 def _get_category(malicious_samples, no_of_features, new_sample):
     """
-    Finds out in which category new sample belongs to 
+    Finds out in which category new sample belongs to
     comparing with given malicious data samples.
     :param malicious_samples: malicious data samples
     :param no_of_features: number of features
