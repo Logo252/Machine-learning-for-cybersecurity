@@ -15,6 +15,8 @@ from src.ml_algorithms_performance.basic_functions import LOGGER
 from src.ml_algorithms_performance.basic_functions import \
     evaluate_methods_performance
 from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
+from src.parameters import TRAINING_DATA_FOR_PHISHING
+from src.parameters import TRAINING_DATA_FOR_SPAM
 
 
 def run_script():
@@ -31,9 +33,13 @@ def run_script():
                   ('Decision tree', DecisionTreeClassifier()),
                   ('Naive Bayes', GaussianNB()),
                   ('Logistic regression', LogisticRegression()),
+                  # SVM - Support vector machines
                   ('SVM', SVC()),
                   ('AdaBoost', AdaBoostClassifier()),
                   ('Random forest', RandomForestClassifier()),
+                  # DNN - Deep neural network with 5 hidden layers,
+                  # each of the layers has 5 neurons
+                  ('DNN', MLPClassifier(hidden_layer_sizes=(5, 5, 5, 5, 5))),
                   # added `max_iter=750` to NN (Neural Networks)
                   # to suppress a warning
                   ('NN', MLPClassifier(max_iter=750))
@@ -49,6 +55,42 @@ def run_script():
     labels = np.array(data_frame['class'])
     number_of_instances = len(samples)
     problem_title = 'trackware'
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 samples=samples,
+                                 labels=labels,
+                                 problem_title=problem_title)
+
+    LOGGER.info("-------------- FOR PHISHING --------------\n")
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_PHISHING,
+                             sep=',',
+                             engine='python')
+
+    samples = np.array(data_frame.drop(['class'], 1))
+    labels = np.array(data_frame['class'])
+    number_of_instances = len(samples)
+    problem_title = 'phishing'
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 samples=samples,
+                                 labels=labels,
+                                 problem_title=problem_title)
+
+    LOGGER.info("-------------- FOR SPAM --------------\n")
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_SPAM,
+                             sep=',',
+                             engine='python')
+
+    samples = np.array(data_frame.drop(['class'], 1))
+    labels = np.array(data_frame['class'])
+    number_of_instances = len(samples)
+    problem_title = 'spam'
 
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
