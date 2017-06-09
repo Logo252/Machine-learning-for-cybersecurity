@@ -5,16 +5,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn import cross_validation
-from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-from src.parameters import ALL_SAMPLES_FOR_TRACKWARE
+from src.parameters import TRAINING_DATA_FOR_PHISHING
 
 # Logging
 logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s')
@@ -24,7 +21,7 @@ LOGGER.setLevel(logging.INFO)  # logging.DEBUG, logging.WARNING
 
 def run_script():
     """
-    Runs the script as the standalone program
+    Runs the script as the standalone program.
     """
     # Configuration for cross validation test harness
     number_of_folds = 10
@@ -32,27 +29,47 @@ def run_script():
     # Seed ensures we have the same sequence of random numbers
     seed = 7
 
-    ml_methods = [('K-NN', KNeighborsClassifier()),
-                  ('Decision tree', DecisionTreeClassifier()),
+    # ML methods - Decision Tree, Naive Bayes, Support Vector Machines,
+    # Deep neural network, Random Forest
+    ml_methods = [('Decision tree', DecisionTreeClassifier()),
                   ('Naive Bayes', GaussianNB()),
-                  ('Logistic regression', LogisticRegression()),
+                  # SVM - Support vector machines
                   ('SVM', SVC()),
-                  ('AdaBoost', AdaBoostClassifier()),
+                  # DNN - Deep neural network with 5 hidden layers,
+                  # each of the layers has 5 neurons
+                  ('DNN', MLPClassifier(hidden_layer_sizes=(5, 5, 5, 5, 5))),
                   ('Random forest', RandomForestClassifier()),
-                  # added `max_iter=750` to NN (Neural Networks) to suppress a warning
-                  ('NN', MLPClassifier(max_iter=750))
                   ]
 
     LOGGER.info("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
-    LOGGER.info("-------------- FOR TRACKWARE --------------\n")
-    data_frame = pd.read_csv(ALL_SAMPLES_FOR_TRACKWARE,
-                             sep=', ',
+    LOGGER.info("-------------- FOR PHISHING --------------\n")
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_PHISHING,
+                             sep=',',
                              engine='python')
 
     samples = np.array(data_frame.drop(['class'], 1))
     labels = np.array(data_frame['class'])
     number_of_instances = len(samples)
-    problem_title = 'trackware'
+    problem_title = 'phishing'
+
+    evaluate_methods_performance(ml_methods=ml_methods,
+                                 number_of_instances=number_of_instances,
+                                 number_of_folds=number_of_folds,
+                                 seed=seed,
+                                 samples=samples,
+                                 labels=labels,
+                                 problem_title=problem_title)
+
+    LOGGER.info("-------------- ML ALGORITHMS PERFORMANCE --------------\n")
+    LOGGER.info("-------------- FOR SPAM --------------\n")
+    data_frame = pd.read_csv(TRAINING_DATA_FOR_PHISHING,
+                             sep=',',
+                             engine='python')
+
+    samples = np.array(data_frame.drop(['class'], 1))
+    labels = np.array(data_frame['class'])
+    number_of_instances = len(samples)
+    problem_title = 'spam'
 
     evaluate_methods_performance(ml_methods=ml_methods,
                                  number_of_instances=number_of_instances,
@@ -67,7 +84,7 @@ def evaluate_methods_performance(ml_methods, number_of_instances,
                                  number_of_folds, seed, samples, labels,
                                  problem_title):
     """
-    Evaluates machine learning methods for cs problem - constructor
+    Evaluates machine learning methods for given computer security issue.
     :param ml_methods: machine learning methods
     :param number_of_instances: number of instances
     :param number_of_folds: number of folds
