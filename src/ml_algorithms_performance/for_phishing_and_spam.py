@@ -133,7 +133,7 @@ def show_plot_of_algorithms_results(methods_names, results, problem_title):
     """
     fig = plt.figure()
 
-    ax = fig.add_subplot(111)  # 111 means "1x1 grid, first subplot"
+    axes = fig.add_subplot(111)  # 111 means "1x1 grid, first subplot"
     plt.boxplot(results)
 
     # x and y axis titles
@@ -144,7 +144,7 @@ def show_plot_of_algorithms_results(methods_names, results, problem_title):
         'Machine learning algorithms applied for {}'.format(problem_title))
 
     # Set the Name of each box
-    ax.set_xticklabels(methods_names)
+    axes.set_xticklabels(methods_names)
 
     # Change font size of the text
     plt.rcParams.update({'font.size': 23})
