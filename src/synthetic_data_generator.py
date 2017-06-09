@@ -24,9 +24,11 @@ NO_OF_SAMPLES = 100
 ZERO = 0
 ONE = 1
 
-# If MODE = 2 -> Unneeded features will be removed from the samples
-# If MODE = 1 -> Created file lines will be sorted by category (from 0 to 1)
-# If MODE = 0 -> Running script without modifications
+'''
+If MODE = 2 -> Unneeded features will be removed from the samples
+If MODE = 1 -> Created file lines will be sorted by category (from 0 to 1)
+If MODE = 0 -> Running script without modifications
+'''
 MODE = 0
 
 
@@ -35,7 +37,8 @@ def run_script():
     Runs the script as the standalone program
     """
     LOGGER.info("----------------------- TRACKWARE -----------------------")
-    LOGGER.info("----------------------- MODE = %d -----------------------\n" % MODE)
+    LOGGER.info(
+        "----------------------- MODE = %d -----------------------\n" % MODE)
     generated_samples_file_name = GENERATED_SAMPLES_FILE_FOR_TRACKWARE
     all_samples_file_name = ALL_SAMPLES_FOR_TRACKWARE
     data_samples_file = TRACKWARE_SAMPLES_FILE
@@ -70,10 +73,12 @@ def remove_unneeded_features(samples):
     """
     selector = VarianceThreshold()
     selector.fit_transform(samples)
-    features = selector.get_support(
-        indices=True)  # returns an array of integers corresponding to nonremoved features
-    feature_names = [column for column in samples[
-        features]]  # array of all non removed features names
+    # Array of integers corresponding to non removed features
+    features = selector.get_support(indices=True)
+
+    # Array of all non removed features names
+    feature_names = [column for column in samples[features]]
+
     return pd.DataFrame(selector.fit_transform(samples), columns=feature_names)
 
 
@@ -114,8 +119,10 @@ def export_samples(all_samples_file_name,
         for sample in malicious_samples:
             sample_as_string = ', '.join(str(feature) for feature in sample)
             all_samples.write(sample_as_string)
-            all_samples.write(
-                ', 1')  # category - 1 (malware) at the end of the line
+
+            # Category - 1 (malware) at the end of the line
+            all_samples.write(', 1')
+
             all_samples.write('\n')  # new line
 
         # Writing generated random samples to the file
@@ -129,7 +136,8 @@ def export_samples(all_samples_file_name,
                 feature_value = random.randint(ZERO, ONE)
                 new_sample.append(feature_value)
 
-            # If the new sample has been already generated or he is the same as malicious sample
+            # If the new sample has been already generated
+            # or he is the same as malicious sample
             # then skip everything and try to generate new sample
             if new_sample in new_samples or new_sample in malicious_samples:
                 continue
@@ -165,14 +173,17 @@ def _get_category(malicious_samples, no_of_features, new_sample):
     for data_sample in malicious_samples:
         for index in range(no_of_features):
             if data_sample[index] == 1:
-                # If malicious sample's feature value (1) matches to new sample's feature value
-                # then set sample as malicious, otherwise as benign and break cycle
+                # If malicious sample's feature value (1) matches to new
+                # sample's feature value then set sample as malicious,
+                # otherwise as benign and break cycle
                 if data_sample[index] == new_sample[index]:
                     category = '1'
                 else:
                     category = '0'
                     break
-        if category == '1':  # If new sample's category is 1 then do not compare further to others data samples
+        # If new sample's category is 1 then do not compare
+        # further to others data samples
+        if category == '1':
             break
     return category
 
